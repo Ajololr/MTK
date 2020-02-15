@@ -1,0 +1,25 @@
+#textBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    margin: 0 auto!important;
+    justify-items: center;
+}
+
+#menu1 > img, #menu2 > img {
+    transition: none!important;
+    width: 70%;
+    margin: 0 15%;
+    border: 2px solid blueviolet !important;
+    border-radius: 2vw;
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+

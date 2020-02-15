@@ -1,0 +1,22 @@
+.caption{
+    border: 2px solid blueviolet;
+    border-radius: 5px;
+    margin-top: 5px;
+    min-height: 72px;
+    font-size: 14pt;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.img-responsive{
+    border: 2px solid blueviolet !important;
+    border-radius: 5px;
+}
+
+.title-modal{
+    margin: 0 auto;
+    font-size: 14pt;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+}

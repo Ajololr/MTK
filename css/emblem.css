@@ -1,0 +1,12 @@
+.emblem{
+    margin: 0 !important;
+    padding: 0 !important;
+    /*width: 42px;*/
+    /*display: flex;*/
+    /*align-self: flex-end;*/
+    /*transition: none!important;*/
+}
+
+.emblem:hover{
+
+}

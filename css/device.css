@@ -1,0 +1,29 @@
+#textBody{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2vh;
+}
+
+.row img{
+    position: relative;
+    max-height: 20vh;
+    align-self: center;
+    justify-self: center;
+    margin: 1vw;
+    border: 2px solid blueviolet !important;
+    border-radius: 2vw;
+}
+
+.row p{
+     text-indent: 5vw;
+}
+
+
+

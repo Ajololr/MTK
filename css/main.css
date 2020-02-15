@@ -1,0 +1,61 @@
+body {
+    background: no-repeat url("/Военка/МТК-240Б/images/background.jpg");
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Header container*/
+.header {
+    flex: 0 0 100%;
+    background-color: #e8ffe9;
+}
+
+.header-menu{
+
+}
+
+.header-menu-item {
+    position: relative;
+    background-color: inherit;
+    margin-right: 0.5rem;
+}
+
+.header-menu-item:last-child {
+    margin-right: 0;
+}
+
+.header-menu-item-button {
+    background-color: inherit;
+    box-shadow: 2px 3px 5px green, -1px -1px 5px green;
+    transition: 0.5s;
+}
+
+.header-icons-container {
+    display: inline-flex;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.header-icons-container-item:last-child {
+    margin-left: 1rem;
+}
+
+.header-icons-container-item-icon {
+    height: 3rem;
+}
+
+/*Main content container*/
+.content-container {
+    flex: 0 0 100%;
+    margin-top: 20rem;
+}
+
+
+/*Footer container*/
+.footer-container {
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
+    padding-top: 1rem;
+    background-color: white;
+}
