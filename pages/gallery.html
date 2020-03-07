@@ -5,12 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="./lib/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="shortcut icon" href="./images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <link rel="stylesheet" href="../css/loop.css">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" type="image/x-icon">
 
-    <script src="./lib/jquery.min.js"></script>
-    <script src="./lib/bootstrap.min.js"></script>
+    <script src="../lib/jquery.min.js"></script>
+    <script src="../lib/bootstrap.min.js"></script>
+    <script src="../js/loop.js"></script>
+    <script src="../js/modalWindows.js"></script>
 </head>
 <body>
 
@@ -22,7 +26,7 @@
         <div class="nav-item" id="myNavbar">
             <ul class="nav navbar-nav header-menu">
                 <li class="header-menu-item">
-                    <a href="./index.html">
+                    <a href="../index.html">
                         <button class="btn header-menu-item-button">
                             Домашняя страница
                         </button>
@@ -89,7 +93,7 @@
                     </ul>
                 </li>
                 <li class="header-menu-item">
-                    <a href="./pages/gallery.html">
+                    <a href="./photoes.html">
                         <button class="btn header-menu-item-button">
                             Галерея
                         </button>
@@ -101,12 +105,12 @@
             <ul class="header-icons-container">
                 <li class="header-icons-container-item">
                     <a class="emblem" href="https://www.bsuir.by">
-                        <img class="header-icons-container-item-icon" src="./images/emblems/bsuir.png"/>
+                        <img class="header-icons-container-item-icon" src="../images/emblems/bsuir.png"/>
                     </a>
                 </li>
                 <li class="header-icons-container-item">
                     <a class="emblem" href="http://www.mil.by/ru/education/bsuir">
-                        <img class="header-icons-container-item-icon" src="./images/emblems/militaryFaculty.png">
+                        <img class="header-icons-container-item-icon" src="../images/emblems/militaryFaculty.png">
                     </a>
                 </li>
             </ul>
@@ -115,7 +119,65 @@
 </header>
 
 <div class="container content-container">
-<!--CONTENT-->
+    <div class="gallery-title">
+        <h3>Галерея</h3>
+    </div>
+    <div class="gallery-container">
+        <ul class="gallery-container__content">
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/1.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/2.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/3.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/4.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/5.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/6.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/7.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/8.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/9.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/10.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/11.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/12.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/13.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/14.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/15.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/16.jpg"/>
+            </li>
+            <li class="gallery-container__content-item">
+                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/17.jpg"/>
+            </li>
+        </ul>
+
+    </div>
 </div>
 
 <footer class="container-fluid footer-container">
