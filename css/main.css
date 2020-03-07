@@ -11,6 +11,9 @@ body {
 }
 
 .header-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
 }
 
@@ -26,7 +29,6 @@ body {
 
 .header-menu-item-button {
     background-color: inherit;
-    box-shadow: 2px 3px 5px green, -1px -1px 5px green;
     transition: 0.5s;
 }
 
@@ -58,4 +60,10 @@ body {
     justify-content: center;
     padding-top: 1rem;
     background-color: white;
+}
+
+button:focus,
+.btn:focus {
+    outline: 0 !important;
+    box-shadow: 2px 3px 5px green, -1px -1px 5px green;
 }
