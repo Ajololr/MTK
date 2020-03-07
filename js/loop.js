@@ -18,7 +18,7 @@
             this.nativeHeight = 0
             this.$element.wrap('<div class="magnify" \>');
             this.$element.parent('.magnify').append('<div class="magnify-large" \>');
-            this.$element.siblings(".magnify-large").css("background","url('" + this.$element.attr("src") + "') no-repeat");
+            this.$element.siblings(".magnify-large").css("background", "url('" + this.$element.attr("src") + "') no-repeat");
             this.$element.parent('.magnify').on(event + '.' + this.type, $.proxy(this.check, this));
             this.$element.parent('.magnify').on(eventOut + '.' + this.type, $.proxy(this.check, this));
         }
@@ -37,7 +37,7 @@
             var self = container.children('img');
             var mag = container.children(".magnify-large");
 // Get the native dimensions of the image
-            if(!this.nativeWidth && !this.nativeHeight) {
+            if (!this.nativeWidth && !this.nativeHeight) {
                 var image = new Image();
                 image.src = self.attr("src");
                 this.nativeWidth = image.width;
@@ -51,13 +51,12 @@
                 } else {
                     mag.fadeOut(100);
                 }
-                if(mag.is(":visible"))
-                {
-                    var rx = Math.round(mx/container.width()*this.nativeWidth - mag.width()/2)*-1;
-                    var ry = Math.round(my/container.height()*this.nativeHeight - mag.height()/2)*-1;
+                if (mag.is(":visible")) {
+                    var rx = Math.round(mx / container.width() * this.nativeWidth - mag.width() / 2) * -1;
+                    var ry = Math.round(my / container.height() * this.nativeHeight - mag.height() / 2) * -1;
                     var bgp = rx + "px " + ry + "px";
-                    var px = mx - mag.width()/2;
-                    var py = my - mag.height()/2;
+                    var px = mx - mag.width() / 2;
+                    var py = my - mag.height() / 2;
                     mag.css({left: px, top: py, backgroundPosition: bgp});
                 }
             }
@@ -66,7 +65,7 @@
 
     /* MAGNIFY PLUGIN DEFINITION
     * ========================= */
-    $.fn.magnify = function ( option ) {
+    $.fn.magnify = function (option) {
         return this.each(function () {
             var $this = $(this)
                 , data = $this.data('magnify')
@@ -88,6 +87,6 @@
             $mag.magnify()
         })
     })
-} ( window.jQuery );
+}(window.jQuery);
 
 
