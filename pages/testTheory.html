@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>МТК-240Б</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Тест по теории</title>
 
     <link rel="stylesheet" href="../lib/bootstrap.min.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/gallery.css">
-    <link rel="stylesheet" href="../css/loop.css">
+    <link rel="stylesheet" href="../css/test.css">
     <link rel="shortcut icon" href="../images/favicon/favicon.ico" type="image/x-icon">
 
     <script src="../lib/jquery.min.js"></script>
     <script src="../lib/bootstrap.min.js"></script>
-    <script src="../js/loop.js"></script>
-    <script src="../js/modalWindows.js"></script>
+    <script src="../questions.json"></script>
+    <script src="../js/testTheory.js"></script>
 </head>
 <body>
-
 <header class="navbar navbar-expand-lg navbar-light header">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -39,7 +36,7 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownTheory">
                         <li class="dropdown-item">
-                            <a href="theoryHTML/ttc.html">Тактико-технические характеристики ЦРРС Р-429</a>
+                            <a href="./tth.html">Тактико-технические характеристики ЦРРС Р-429</a>
                         </li>
                         <li class="dropdown-item">
                             <a href="theoryHTML/composition.html">Состав станции</a>
@@ -93,7 +90,7 @@
                     </ul>
                 </li>
                 <li class="header-menu-item">
-                    <a href="./photoes.html">
+                    <a href="./gallery.html">
                         <button class="btn header-menu-item-button">
                             Галерея
                         </button>
@@ -119,64 +116,34 @@
 </header>
 
 <div class="container content-container">
-    <div class="gallery-title">
-        <h3>Галерея</h3>
-    </div>
-    <div class="gallery-container">
-        <ul class="gallery-container__content">
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/1.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/2.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/3.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/4.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/5.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/6.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/7.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/8.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/9.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/10.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/11.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/12.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/13.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/14.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/15.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/16.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/17.jpg"/>
-            </li>
-        </ul>
-
+    <div class="test-container">
+        <div class="test-container__user-form" id="userForm">
+            <div class="test-container__user-form-credentials">
+                <label for="userSurname">Фамилия*</label>
+                <input type="text" id="userSurname"/>
+                <label for="userName">Имя*</label>
+                <input type="text" id="userName"/>
+                <label for="userGroup">Группа*</label>
+                <input type="text" id="userGroup"/>
+            </div>
+            <div class="test-container__user-form-submit">
+                <button class="btn" type="submit" onclick="startTest()">Начать тест</button>
+            </div>
+        </div>
+        <div class="test-container__question-container" id="questionBlock">
+            <div class="test-container__question-container_header">
+                <h3 class="test-container__question-container_header-value" id="questionNumber"></h3>
+                <p class="test-container__question-container_header-description" id="questionDescription"></p>
+            </div>
+            <div class="test-container__question-container_answers" >
+                <ul class="test-container__question-container_answers-list" id="questionAnswers">
+                </ul>
+            </div>
+            <div class="test-container__question-container_buttons">
+                <button class="btn" id="previousBtn">< Предыдущий вопрос</button>
+                <button class="btn" id="nextBtn">Следующий вопрос ></button>
+            </div>
+        </div>
     </div>
 </div>
 
