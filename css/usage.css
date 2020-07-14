@@ -1,0 +1,33 @@
+h2 {
+    text-align: center;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+h5 {
+    font-weight: bold;
+    text-align: justify
+}
+
+ul {
+    text-align: justify
+}
+
+li {
+    text-align: justify
+}
+
+p {
+    text-align: justify
+}
+
+.mtk-img {
+    text-align: center
+}
+
+.orion-modem {
+    list-style-type: circle
+}
+
