@@ -1,13 +1,19 @@
 const idInLocalStorage = "ResultListForR429Test";
 
-let questionArray;
-
-let testStarted = false;
+let testWithTips;
 
 let testBlock;
+let buttonsBlock;
 let mainBlock;
-let resultBlock;
-let startTheoryBtn;
+let testTypeBlockRef;
+let userFormRef;
+
+let questionNumberRef;
+let questionDescriptionRef;
+let questionAnswersRef;
+
+let answeredCounter;
+
 let resultTable;
 let questionNumber = 0;
 let userSurname;
@@ -17,13 +23,15 @@ let userGroup;
 let currentQuestions = [];
 let questions = [];
 
-let questionResult = [];
-
-let timer;
+const questionResult = new Map();
 
 window.onload = function () {
+    userFormRef = document.getElementById('userForm');
+    userFormRef.style.display = "none";
     testBlock = document.getElementById("questionBlock");
     testBlock.style.display = "none";
+    buttonsBlock = document.getElementById("buttonsBlock");
+    buttonsBlock.style.display = "none";
     resultTable = document.getElementById("tableResult");
     resultTable.style.display = "none";
 
@@ -41,161 +49,22 @@ window.onload = function () {
 };
 
 function initializeQuestions() {
-    questions.push({
-        question: "Напряжение сети переменного тока, необходимое для питания МТК-240Б",
-        answers: [
-            "210 В",
-            "220 В",
-            "230 В",
-            "240 В",
-            "310 В"
-        ],
-        correctAnswer: [
-            3
-        ]
-    });
-    questions.push({
-        question: "Напряжение сети постоянного тока, необходимое для питания МТК-240Б",
-        answers: [
-            "12-24 В",
-            "32-48 В",
-            "48-60 В",
-            "60-72 В",
-            "310 В"
-        ],
-        correctAnswer: [3]
-    });
-    questions.push({
-        question: "Диапазон рабочих температур МТК-240Б",
-        answers: [
-            "-10..+40 ºС",
-            "-30..+30 ºС",
-            "-15..+50 ºС",
-            "-17..+45 ºС",
-            "-25..+50 ºС"
-        ],
-        correctAnswer: [1]
-    });
-    questions.push({
-        question: "Что обеспечивается МТК-240Б с помощью оборудования кроссовой коммутации?",
-        answers: [
-            "диагностика, мониторинг и установка режимов работы входящего в состав комплекса оборудования",
-            "подключение до 16 аналоговых двухпроводных защищенных телефонных аппаратов",
-            "ввод исходных данных (коды, нумерация и т.д.) для АТСЭ ФМС",
-            "выделение цифровых потоков Е-1 и трафика Ethernet",
-            "комплексная защита по току и напряжению всех линий"
-        ],
-        correctAnswer: [5]
-    });
-    questions.push({
-        question: "Что обеспечивается МТК-240Б с помощью аппаратуры криптографической защиты информации?",
-        answers: [
-            "автоматическая телефонная внутренняя связь, исходящая, входящая и транзитная связь с абонентами других АТС сети связи",
-            "шифрование цифрового потока Е1 с возможностью выделения трафика Ethernet",
-            "подключение к взаимодействующим узлам связи или пунктам выделения каналов, в т.ч. РУЭС сети электросвязи общего пользования и т.д. по медному или волоконно-оптическому кабелю связи",
-            "техническая защита информации от несанкционированного доступа, а также от утечек по каналам побочных электромагнитных излучений и наводок",
-            "коммутация и подключение абонентов и пользователей"
-        ],
-        correctAnswer: [2]
-    });
-    questions.push({
-        question: "Что обеспечивается МТК-240Б С помощью аппаратуры цифровых систем передачи (ЦСП)?",
-        answers: [
-            "подключение до 16 аналоговых двухпроводных защищенных телефонных аппаратов",
-            "комплексная защита по току и напряжению всех линий",
-            "работа АТСЭ ФМС в режиме коммутатора ручного обслуживания",
-            "коммутация и подключение абонентов и пользователей",
-            "подключение к взаимодействующим узлам связи или пунктам выделения каналов, в т.ч. РУЭС сети электросвязи общего пользования и т.д. по медному или волоконно-оптическому кабелю связи"
-        ],
-        correctAnswer: [5]
-    });
-    questions.push({
-        question: "Что обеспечивается МТК-240Б С помощью встроенной панельной ПЭВМ?",
-        answers: [
-            "подключение к взаимодействующим узлам связи или пунктам выделения каналов, в т.ч. РУЭС сети электросвязи общего пользования и т.д. по медному или волоконно-оптическому кабелю связи",
-            "коммутация и подключение абонентов и пользователей",
-            "выделение цифровых потоков Е-1 и трафика Ethernet",
-            "работа АТСЭ ФМС в режиме коммутатора ручного обслуживания",
-            "взаимодействие с другими АТС по двум защищенным цифровым потокам Е1 по стандарту G.703 с поддержкой сигнализации типа 1ВСК, 2ВСК и EDSS-1"
-        ],
-        correctAnswer: [4]
-    });
-    questions.push({
-        question: "Масса полностью укомплектованного контейнера (не более)",
-        answers: [
-            "20 кг",
-            "30 кг",
-            "50 кг",
-            "60 кг",
-            "70 кг"
-        ],
-        correctAnswer: [3]
-    });
-    questions.push({
-        question: "Масса кейса с АКБ (не более)",
-        answers: [
-            "5 кг",
-            "10 кг",
-            "15 кг",
-            "20 кг",
-            "25 кг"
-        ],
-        correctAnswer: [3]
-    });
-    questions.push({
-        question: "Масса контейнера для телефонных аппаратов (ТА) (не более)",
-        answers: [
-            "10 кг",
-            "20 кг",
-            "30 кг",
-            "40 кг",
-            "50 кг"
-        ],
-        correctAnswer: [3]
-    });
-    questions.push({
-        question: "Диапазон температур при хранении и транспортировании в ударопрочных, пыле- и влагозащищенных контейнере и кейсах со степенью защиты IP-67",
-        answers: [
-            "-30..+50 ºС",
-            "-25..+50 ºС",
-            "-40..+40 ºС",
-            "-40..+60 ºС",
-            "-50..+65 ºС"
-        ],
-        correctAnswer: [5]
-    });
-    questions.push({
-        question: "Что не входит в состав МТК-240Б?",
-        answers: [
-            "аппаратура цифровых систем передачи Орион-3",
-            "место для установки аппаратуры АЕ1-600А",
-            "панель коммутации",
-            "модуль доступа МД1-1Р",
-            "ЗИП-О"
-        ],
-        correctAnswer: [4]
-    });
-    questions.push({
-        question: "Что не входит в состав контейнера для ТА МТК-240Б?",
-        answers: [
-            "кейс",
-            "преобразователь напряжения ПН-24/48",
-            "телефонный аппарат типа «Нефрит-2 АТС»",
-            "витая пара 20 м",
-            "провод заземления 5 м"
-        ],
-        correctAnswer: [2]
-    });
-    questions.push({
-        question: "Предназначение МТК-240Б",
-        answers: [
-            "Для оперативной организации цифровой проводной линии связи, образования и шифрования/дешифрования канала Е1.",
-            "Для оперативной организации цифровой проводной линии связи, образования и шифрования/дешифрования канала Е1, а также развертывания засекреченных сетей передачи данных, видеоконференцсвязи и автоматической телефонной связи на стационарном или подвижном пункте управления.",
-            "Для оперативной организации цифровой проводной линии связи, а также развертывания засекреченных сетей передачи данных, видеоконференцсвязи и автоматической телефонной связи на стационарном или подвижном пункте управления.",
-            "Для организации связи и передачи цифровой информации на расстоянии прямой видимости на стационарном или подвижном пункте управления, а также оперативной организации цифровой проводной линии связи, образования и шифрования/дешифрования канала Е1.",
-            "Для образования и шифрования/дешифрования канала Е1, а также развертывания засекреченных сетей передачи данных, видеоконференцсвязи и автоматической телефонной связи на стационарном или подвижном пункте управления."
-        ],
-        correctAnswer: [2]
+    answeredCounter = document.getElementById("answeredCounter");
+    questionNumberRef = document.getElementById("questionNumber");
+    questionDescriptionRef = document.getElementById("questionDescription");
+    questionAnswersRef = document.getElementById("questionAnswers");
+
+    $.getJSON("../sources/questions.json", function (data) {
+        $.each(data, function (key, value) {
+            questions.push({
+                question: value.question,
+                answers: value.answers,
+                correctAnswer: value.correctAnswer
+            });
+        });
+        mixArrayQuestions();
+        getArrayQuestions();
+        showQuestion();
     });
 }
 
@@ -220,13 +89,15 @@ function getArrayQuestions() {
 function showQuestion() {
     let currentQuestion = currentQuestions[questionNumber];
     let answersTemplate = '';
-    document.getElementById("questionNumber").innerText = "Вопрос " + (questionNumber + 1);
-    document.getElementById("questionDescription").innerText = currentQuestion.question;
+    questionNumberRef.innerText = "Вопрос " + (questionNumber + 1);
+    questionDescriptionRef.innerText = currentQuestion.question;
     currentQuestion.answers.forEach((answer, i) => {
-        answersTemplate += "<li>" + "<input type=\"radio\" class=\"radioButton\" id=\"" + i + "\" value=\"" + i + "\" >" + answer + "</li>";
+        answersTemplate += "<li>" +
+            "<input type=\"radio\" class=\"radioButton\" id=\"" + i + "\" value=\"" + i + "\" " + "style=\"margin-right: 0.5rem\"" + ">" + answer + "</li>";
     });
-    document.getElementById('questionAnswers').innerHTML = answersTemplate ? answersTemplate : '';
+    questionAnswersRef.innerHTML = answersTemplate ? answersTemplate : '';
     questionNumber++;
+    answeredCounter.innerHTML = questionNumber + "/10";
 }
 
 
@@ -241,29 +112,24 @@ function startTest() {
         return;
     }
 
-    initializeQuestions();
-    mixArrayQuestions();
-    getArrayQuestions();
-
     document.getElementById('userForm').style.display = 'none';
 
-    showQuestion();
+    initializeQuestions();
 
     document.getElementById('questionBlock').style.display = 'flex';
+    document.getElementById('buttonsBlock').style.display = 'flex';
     document.getElementById("nextBtn").addEventListener('click', nextQuestion);
     document.getElementById('previousBtn').addEventListener('click', previousQuestion);
     document.getElementById('previousBtn').style.opacity = '50%';
 }
 
 function saveResult() {
-    radioBtns = document.getElementsByClassName("radioButton");
-    let results = [];
-    for (let i = 0; i < radioBtns.length; i++) {
-        if (radioBtns[i].checked) {
-            results.push(radioBtns[i].value);
+    const radioButtonsRef = document.getElementsByClassName("radioButton");
+    Array.from(radioButtonsRef).forEach(btn => {
+        if (btn.checked) {
+            questionResult.set(questionNumber, btn.value);
         }
-    }
-    questionResult.push(results);
+    });
 }
 
 function showResultBlock() {
@@ -378,4 +244,11 @@ function UserResult(userName, group, mark, date) {
     this._group = group;
     this._mark = mark;
     this._date = date;
+}
+
+function chooseTest(withTips) {
+    testWithTips = withTips;
+    testTypeBlockRef = document.getElementById("testType");
+    testTypeBlockRef.style.display = "none";
+    userFormRef.style.display = "flex";
 }

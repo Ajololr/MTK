@@ -1,11 +1,17 @@
-.test-container {
+.test-container__type {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.test-container__type-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3rem;
 }
 
 .test-container__user-form {
-    display: flex;
     flex-direction: column;
 }
 
@@ -13,6 +19,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 30%;
+    align-self: center;
 }
 
 .test-container__user-form-submit {
@@ -23,12 +31,25 @@
 
 .test-container__question-container {
     width: 100%;
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 .test-container__question-container_header {
+    flex: 100%;
+}
+
+.test-container__question-container_header-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.test-container__question-container_header-title_value {
+
+}
+
+.test-container__question-container_header-title_counter {
 
 }
 
@@ -50,11 +71,8 @@
 
 }
 
-.test-container__question-container_buttons {
-    display: flex;
-    flex-direction: row;
+.test-container__buttons {
     justify-content: space-between;
-    flex: 100%;
     margin-top: 5rem;
 }
 
@@ -95,6 +113,6 @@
     grid-column: 2;
 }
 
-.result div:nth-child(3){
+.result div:nth-child(3) {
     grid-column: 3;
 }

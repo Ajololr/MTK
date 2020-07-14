@@ -11,7 +11,7 @@
 
     <script src="../lib/jquery.min.js"></script>
     <script src="../lib/bootstrap.min.js"></script>
-    <script src="../questions.json"></script>
+    <script src="../sources/questions.json"></script>
     <script src="../js/testTheory.js"></script>
 </head>
 <body>
@@ -96,6 +96,13 @@
                         </button>
                     </a>
                 </li>
+                <li class="header-menu-item">
+                    <a href="about.html">
+                        <button class="btn header-menu-item-button">
+                            О программе
+                        </button>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="nav-item">
@@ -117,6 +124,13 @@
 
 <div class="container content-container">
     <div class="test-container">
+        <div class="test-container__type" id="testType">
+            <h3>Выберите тип теста</h3>
+            <div class="test-container__type-buttons">
+                <button class="btn" type="button" onclick="chooseTest(true)">Тест с подсказками</button>
+                <button class="btn" type="button" onclick="chooseTest(false)">Контрольный тест</button>
+            </div>
+        </div>
         <div class="test-container__user-form" id="userForm">
             <div class="test-container__user-form-credentials">
                 <label for="userSurname">Фамилия*</label>
@@ -132,17 +146,20 @@
         </div>
         <div class="test-container__question-container" id="questionBlock">
             <div class="test-container__question-container_header">
-                <h3 class="test-container__question-container_header-value" id="questionNumber"></h3>
+                <div class="test-container__question-container_header-title">
+                    <h3 class="test-container__question-container_header-title_value" id="questionNumber"></h3>
+                    <span class="test-container__question-container_header-title_counter" id="answeredCounter">0/10</span>
+                </div>
                 <p class="test-container__question-container_header-description" id="questionDescription"></p>
             </div>
             <div class="test-container__question-container_answers" >
                 <ul class="test-container__question-container_answers-list" id="questionAnswers">
                 </ul>
             </div>
-            <div class="test-container__question-container_buttons">
-                <button class="btn" id="previousBtn">< Предыдущий вопрос</button>
-                <button class="btn" id="nextBtn">Следующий вопрос ></button>
-            </div>
+        </div>
+        <div class="test-container__buttons" id="buttonsBlock">
+            <button class="btn" id="previousBtn">< Предыдущий вопрос</button>
+            <button class="btn" id="nextBtn">Следующий вопрос ></button>
         </div>
     </div>
 </div>

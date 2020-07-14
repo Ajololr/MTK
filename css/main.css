@@ -55,10 +55,11 @@ body {
 
 /*Footer container*/
 .footer-container {
+    position: absolute;
+    bottom: 0;
     display: flex;
     flex: 0 0 100%;
     justify-content: center;
-    padding-top: 1rem;
     background-color: white;
 }
 
