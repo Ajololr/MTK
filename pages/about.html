@@ -7,24 +7,20 @@
 
     <link rel="stylesheet" href="../lib/bootstrap.min.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/gallery.css">
-    <link rel="stylesheet" href="../css/loop.css">
+    <link rel="stylesheet" href="../css/about.css">
     <link rel="shortcut icon" href="../images/favicon/favicon.ico" type="image/x-icon">
 
     <script src="../lib/jquery.min.js"></script>
     <script src="../lib/bootstrap.min.js"></script>
-    <script src="../js/loop.js"></script>
-    <script src="../js/modalWindows.js"></script>
 </head>
 <body>
-
 <header class="navbar navbar-expand-lg navbar-light header">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">МТК-240Б</a>
         </div>
         <div class="nav-item" id="myNavbar">
-            <ul class="nav navbar-nav header-menu">
+            <ul class="nav navbar-nav ">
                 <li class="header-menu-item">
                     <a href="../index.html">
                         <button class="btn header-menu-item-button">
@@ -39,10 +35,10 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownTheory">
                         <li class="dropdown-item">
-                            <a href="./tth.html">Тактико-технические характеристики МТК-240Б</a>
+                            <a href="tth.html">Тактико-технические характеристики МТК-240Б</a>
                         </li>
                         <li class="dropdown-item">
-                            <a href="./composition.html">Состав комплекса</a>
+                            <a href="composition.html">Состав комплекса</a>
                         </li>
                         <li class="dropdown-item">
                             <a href="./#">Устройство комплекса</a>
@@ -52,7 +48,7 @@
                                 комплекса к работе</a>
                         </li>
                         <li class="dropdown-item">
-                            <a href="./usage.html">Варианты применения</a>
+                            <a href="usage.html">Варианты применения</a>
                         </li>
                     </ul>
                 </li>
@@ -93,7 +89,7 @@
                     </ul>
                 </li>
                 <li class="header-menu-item">
-                    <a href="./#">
+                    <a href="gallery.html">
                         <button class="btn header-menu-item-button">
                             Галерея
                         </button>
@@ -124,72 +120,19 @@
         </div>
     </div>
 </header>
-
 <div class="container content-container">
-    <div class="gallery-title">
-        <h3>Галерея</h3>
-    </div>
-    <div class="gallery-container">
-        <ul class="gallery-container__content">
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/1.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/2.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/3.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/4.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/5.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/6.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/7.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/8.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/9.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/10.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/11.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/12.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/13.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/14.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/15.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/16.jpg"/>
-            </li>
-            <li class="gallery-container__content-item">
-                <img data-toggle="magnify" class="gallery-container__content-item_image" src="../images/gallery/17.jpg"/>
-            </li>
-        </ul>
-
+    <div class="about_content">
+        <div class="about_content__title">
+            <h3>О программе:</h3>
+        </div>
+        <div class="about_content__description">
+            <p>Белорусский государственный университет ифнорматики и радиоэлектроники</p>
+            <p>Военный факультет</p>
+            <p>Программа для обучения работе на мобильном телекоммуникационном комплексе МТК-240Б</p>
+            <p>Захаренко Артем</p>
+            <p>2020 г.</p>
+        </div>
     </div>
 </div>
-
-<footer class="container-fluid footer-container">
-    <p>© 2020 Artyom Zakharchenko, BSUIR</p>
-</footer>
-
 </body>
 </html>
