@@ -1,9 +1,9 @@
 const idInLocalStorage = "ResultListForR429Test";
 
-let testWithTips;
+let testWithHints;
 
 let testBlock;
-let buttonsBlock;
+let buttonsBlockRef;
 let mainBlock;
 let testTypeBlockRef;
 let userFormRef;
@@ -12,10 +12,11 @@ let questionNumberRef;
 let questionDescriptionRef;
 let questionAnswersRef;
 
-let answeredCounter;
+let answeredCounterRef;
 
 let resultTable;
 let questionNumber = 0;
+let answeredNumber = 0;
 let userSurname;
 let userName;
 let userGroup;
@@ -23,15 +24,15 @@ let userGroup;
 let currentQuestions = [];
 let questions = [];
 
-const questionResult = new Map();
+const questionResultMap = new Map();
 
 window.onload = function () {
     userFormRef = document.getElementById('userForm');
     userFormRef.style.display = "none";
     testBlock = document.getElementById("questionBlock");
     testBlock.style.display = "none";
-    buttonsBlock = document.getElementById("buttonsBlock");
-    buttonsBlock.style.display = "none";
+    buttonsBlockRef = document.getElementById("buttonsBlock");
+    buttonsBlockRef.style.display = "none";
     resultTable = document.getElementById("tableResult");
     resultTable.style.display = "none";
 
@@ -49,7 +50,7 @@ window.onload = function () {
 };
 
 function initializeQuestions() {
-    answeredCounter = document.getElementById("answeredCounter");
+    answeredCounterRef = document.getElementById("answeredCounter");
     questionNumberRef = document.getElementById("questionNumber");
     questionDescriptionRef = document.getElementById("questionDescription");
     questionAnswersRef = document.getElementById("questionAnswers");
@@ -69,35 +70,57 @@ function initializeQuestions() {
 }
 
 function mixArrayQuestions() {
-    let currentIndex = questions.length;
-    let tempValue;
-    let randomIndex;
-    while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        tempValue = questions[currentIndex];
-        questions[currentIndex] = questions[randomIndex];
-        questions[randomIndex] = tempValue;
+    questions = shuffle(questions);
+}
+
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
     }
-    questions.reverse();
+    return a;
 }
 
 function getArrayQuestions() {
-    currentQuestions = questions.slice(0, 10);
+    currentQuestions = questions.slice(0, 11);
 }
 
 function showQuestion() {
     let currentQuestion = currentQuestions[questionNumber];
     let answersTemplate = '';
-    questionNumberRef.innerText = "Вопрос " + (questionNumber + 1);
+    questionNumber++;
+    questionNumberRef.innerText = "Вопрос " + (questionNumber);
     questionDescriptionRef.innerText = currentQuestion.question;
     currentQuestion.answers.forEach((answer, i) => {
         answersTemplate += "<li>" +
-            "<input type=\"radio\" class=\"radioButton\" id=\"" + i + "\" value=\"" + i + "\" " + "style=\"margin-right: 0.5rem\"" + ">" + answer + "</li>";
+            "<input type=\"radio\" class=\"radioButton\" name=\"radio\" id=\"" + i + "\" value=\"" + i + "\" " + "style=\"margin-right: 0.5rem\"" + ">" + answer + "</li>";
     });
+    document.getElementById("checkBtn").disabled = !(testWithHints && questionResultMap.has(questionNumber));
     questionAnswersRef.innerHTML = answersTemplate ? answersTemplate : '';
-    questionNumber++;
-    answeredCounter.innerHTML = questionNumber + "/10";
+    questionResultMap.has(questionNumber) ? preselectAnswer(questionResultMap.get(questionNumber)) : '';
+    testWithHints ? addAnswersCheckForTestWithHints() : '';
+}
+
+function preselectAnswer(value) {
+    const answersRef = questionAnswersRef.children;
+    Array.from(answersRef).forEach(answer => {
+        const radioBtnRef = answer.children[0];
+        if (radioBtnRef.value === value) {
+            radioBtnRef.checked = true;
+        }
+    });
+}
+
+function addAnswersCheckForTestWithHints() {
+    const answersRef = questionAnswersRef.children;
+    Array.from(answersRef).forEach(answer => {
+        const radioBtnRef = answer.children[0];
+        radioBtnRef.addEventListener("click", () => {
+            document.getElementById("checkBtn").disabled = false;
+            !questionResultMap.has(questionNumber) ? answeredCounterRef.innerHTML = ++answeredNumber + "/10" : '';
+            questionResultMap.set(questionNumber, radioBtnRef.value);
+        });
+    });
 }
 
 
@@ -117,19 +140,15 @@ function startTest() {
     initializeQuestions();
 
     document.getElementById('questionBlock').style.display = 'flex';
-    document.getElementById('buttonsBlock').style.display = 'flex';
+    buttonsBlockRef.style.display = 'flex';
+    if (testWithHints) {
+        document.getElementById("checkBtn").disabled = true;
+    } else {
+        document.getElementById("checkBtn").style.display = 'none';
+    }
     document.getElementById("nextBtn").addEventListener('click', nextQuestion);
     document.getElementById('previousBtn').addEventListener('click', previousQuestion);
     document.getElementById('previousBtn').style.opacity = '50%';
-}
-
-function saveResult() {
-    const radioButtonsRef = document.getElementsByClassName("radioButton");
-    Array.from(radioButtonsRef).forEach(btn => {
-        if (btn.checked) {
-            questionResult.set(questionNumber, btn.value);
-        }
-    });
 }
 
 function showResultBlock() {
@@ -212,22 +231,19 @@ function nextQuestion(event) {
     if (questionNumber < 10) {
         document.getElementById('previousBtn').style.opacity = '100%';
         if (questionNumber === 9) {
-            document.getElementById("nextBtn").style.opacity = '50%';
+            document.getElementById("nextBtn").innerText = "Закончить тест";
         }
-        saveResult();
         showQuestion();
         event.stopPropagation();
     } else {
         event.stopPropagation();
-        saveResult();
         showResultBlock();
-        console.log(questionResult);
     }
 }
 
 function previousQuestion(event) {
     if (questionNumber > 1) {
-        document.getElementById("nextBtn").style.opacity = '100%';
+        document.getElementById("nextBtn").innerText = "Следующий вопрос >";
         questionNumber -= 2;
         showQuestion();
         if (questionNumber === 1) {
@@ -246,9 +262,29 @@ function UserResult(userName, group, mark, date) {
     this._date = date;
 }
 
-function chooseTest(withTips) {
-    testWithTips = withTips;
+function chooseTest(withHints) {
+    testWithHints = withHints;
     testTypeBlockRef = document.getElementById("testType");
     testTypeBlockRef.style.display = "none";
     userFormRef.style.display = "flex";
+}
+
+function checkAnswer() {
+    const answersRef = questionAnswersRef.children;
+    const currentValue = questionResultMap.get(questionNumber);
+    const correctValue = currentQuestions[questionNumber - 1].correctAnswer;
+    if (currentValue === correctValue - 1) {
+        answersRef[currentValue].className = "bg-success";
+    } else {
+        answersRef[currentValue].className = "bg-danger";
+        answersRef[correctValue - 1].className = "bg-success";
+    }
+}
+
+function showHint() {
+
+}
+
+function setAnswerBackground(element, className) {
+    element.className = "";
 }

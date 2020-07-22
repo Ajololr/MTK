@@ -148,17 +148,20 @@
             <div class="test-container__question-container_header">
                 <div class="test-container__question-container_header-title">
                     <h3 class="test-container__question-container_header-title_value" id="questionNumber"></h3>
-                    <span class="test-container__question-container_header-title_counter" id="answeredCounter">0/10</span>
+                    <p>Дан ответ на:
+                        <span class="test-container__question-container_header-title_counter"
+                              id="answeredCounter">0/10</span>
+                    </p>
                 </div>
                 <p class="test-container__question-container_header-description" id="questionDescription"></p>
             </div>
-            <div class="test-container__question-container_answers" >
-                <ul class="test-container__question-container_answers-list" id="questionAnswers">
-                </ul>
+            <div class="test-container__question-container_answers">
+                <ul class="test-container__question-container_answers-list" id="questionAnswers"></ul>
             </div>
         </div>
         <div class="test-container__buttons" id="buttonsBlock">
             <button class="btn" id="previousBtn">< Предыдущий вопрос</button>
+            <button class="btn" id="checkBtn" onclick="checkAnswer()">Проверить ответ</button>
             <button class="btn" id="nextBtn">Следующий вопрос ></button>
         </div>
     </div>
