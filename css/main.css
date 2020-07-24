@@ -1,5 +1,5 @@
 body {
-    background: no-repeat url("/Военка/МТК-240Б/images/background.jpg");
+    background: no-repeat;
     display: flex;
     flex-wrap: wrap;
 }
