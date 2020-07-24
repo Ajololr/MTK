@@ -1,4 +1,5 @@
-const idInLocalStorage = "ResultListForR429Test";
+const idInLocalStorage = "MTK-240TestResult";
+const QUESTIONS_AMOUNT = 10;
 
 let testWithHints;
 
@@ -14,7 +15,8 @@ let questionAnswersRef;
 
 let answeredCounterRef;
 
-let resultTable;
+let resultRef;
+let resultTableBodyRef;
 let questionNumber = 0;
 let answeredNumber = 0;
 let userSurname;
@@ -33,20 +35,8 @@ window.onload = function () {
     testBlock.style.display = "none";
     buttonsBlockRef = document.getElementById("buttonsBlock");
     buttonsBlockRef.style.display = "none";
-    resultTable = document.getElementById("tableResult");
-    resultTable.style.display = "none";
-
-
-    document.getElementById("show").addEventListener("click", () => {
-        let resultList = JSON.parse(localStorage.getItem(idInLocalStorage));
-
-        if (resultList !== undefined) {
-            if (resultList.length !== 0) {
-                showResultsForAllTimes(resultList);
-            }
-        }
-
-    });
+    resultRef = document.getElementById("result");
+    resultRef.style.display = "none";
 };
 
 function initializeQuestions() {
@@ -82,7 +72,7 @@ function shuffle(a) {
 }
 
 function getArrayQuestions() {
-    currentQuestions = questions.slice(0, 11);
+    currentQuestions = questions.slice(0, QUESTIONS_AMOUNT + 1);
 }
 
 function showQuestion() {
@@ -98,7 +88,7 @@ function showQuestion() {
     document.getElementById("checkBtn").disabled = !(testWithHints && questionResultMap.has(questionNumber));
     questionAnswersRef.innerHTML = answersTemplate ? answersTemplate : '';
     questionResultMap.has(questionNumber) ? preselectAnswer(questionResultMap.get(questionNumber)) : '';
-    testWithHints ? addAnswersCheckForTestWithHints() : '';
+    addAnswersCheckForTestWithHints();
 }
 
 function preselectAnswer(value) {
@@ -116,7 +106,7 @@ function addAnswersCheckForTestWithHints() {
     Array.from(answersRef).forEach(answer => {
         const radioBtnRef = answer.children[0];
         radioBtnRef.addEventListener("click", () => {
-            document.getElementById("checkBtn").disabled = false;
+            testWithHints ? document.getElementById("checkBtn").disabled = false : '';
             !questionResultMap.has(questionNumber) ? answeredCounterRef.innerHTML = ++answeredNumber + "/10" : '';
             questionResultMap.set(questionNumber, radioBtnRef.value);
         });
@@ -152,80 +142,53 @@ function startTest() {
 }
 
 function showResultBlock() {
-    mainBlock.style.display = "none";
-    resultTable.style.display = "block";
+    document.getElementById("resultName").innerText = userSurname + " " + userName;
+    document.getElementById("resultGroup").innerText = userGroup;
+    document.getElementById("resultMark").innerText = calculateMark().toString();
+
+    resultTableBodyRef = document.getElementById("resultTableBody");
+    createResultTable();
+
     testBlock.style.display = "none";
+    buttonsBlockRef.style.display = "none";
+    resultRef.style.display = "flex";
+}
+
+function calculateMark() {
     let result = 0;
-
-    for (let i = 1; i < 11; i++) {
-        let row = document.getElementById("question" + i);
-        let tdArray = row.querySelectorAll("td");
-        tdArray[0].innerText = currentQuestions[i - 1].question;
-        tdArray[1].innerText = "";
-        currentQuestions[i - 1].answer.forEach(function (elem) {
-            tdArray[1].innerText += currentQuestions[i - 1].allAnswer[elem - 1] + "\n ";
-        });
-        tdArray[2].innerText = "";
-        questionResult[i - 1].forEach(function (elem) {
-            tdArray[2].innerText += currentQuestions[i - 1].allAnswer[elem - 1] + "\n ";
-        });
-
-        if (tdArray[1].innerText === tdArray[2].innerText) {
-            result++;
-        }
+    for (let i = 0; i < QUESTIONS_AMOUNT; i++) {
+        checkCorrectAnswer(i) ? result++ : '';
     }
+    return 10 * (result / QUESTIONS_AMOUNT);
+}
 
-    document.getElementById("resultMark").innerHTML = "Ваша отметка: " + result;
+function createResultTable() {
+    for (let i = 0; i < QUESTIONS_AMOUNT; i++) {
+        const row = document.createElement("tr");
 
-    let now = new Date();
-
-    let resultObj = new UserResult(userName, group, result, now.toLocaleString("ru"));
-    let resultList = JSON.parse(localStorage.getItem(idInLocalStorage));
-
-    if (resultList === null) {
-        resultList = [];
+        const numCol = document.createElement("td");
+        numCol.innerText = (i + 1).toString();
+        const statusCol = document.createElement("td");
+        const statusImg = document.createElement("span");
+        statusImg.setAttribute("class", checkCorrectAnswer(i) ? "question-status-true" : "question-status-false");
+        statusCol.appendChild(statusImg);
+        const scoreCol = document.createElement("td");
+        scoreCol.innerText = checkCorrectAnswer(i) ? "1" : "0";
+        row.appendChild(numCol);
+        row.appendChild(statusCol);
+        row.appendChild(scoreCol);
+        resultTableBodyRef.appendChild(row);
     }
-
-    resultList.push(resultObj);
-    localStorage.setItem(idInLocalStorage, JSON.stringify(resultList));
 }
 
-function showResultsForAllTimes(list) {
-    let table = document.createElement("table");
-    table.id = idInLocalStorage;
-    table.className = "table-bordered";
-    let thead = document.createElement("thead");
-    thead.appendChild(createRow("th", ["ФИО", "Группа", "Результат", "Время"]));
-
-    let tbody = document.createElement("tbody");
-    list.forEach((elem) => {
-        tbody.appendChild(createRow("td", [
-            elem._userName,
-            elem._group,
-            elem._mark,
-            elem._date,
-        ]));
-    });
-
-    table.appendChild(thead);
-    table.appendChild(tbody);
-
-    document.getElementById("mainContainer").appendChild(table);
+function checkCorrectAnswer(questionNumber) {
+    if (questionResultMap.has(questionNumber + 1)) {
+        const correctAnswer = currentQuestions[questionNumber].correctAnswer;
+        return (correctAnswer - 1).toString() === questionResultMap.get(questionNumber + 1)
+    }
+    return false;
 }
 
-function createRow(tagName, arr) {
-    let row = document.createElement("tr");
-
-    arr.forEach((elem) => {
-        let tag = document.createElement(tagName);
-        let p = document.createElement("p");
-        p.innerHTML = elem;
-        tag.appendChild(p);
-        row.appendChild(tag);
-    });
-
-    return row;
-}
 
 function nextQuestion(event) {
     if (questionNumber < 10) {
@@ -283,8 +246,4 @@ function checkAnswer() {
 
 function showHint() {
 
-}
-
-function setAnswerBackground(element, className) {
-    element.className = "";
 }

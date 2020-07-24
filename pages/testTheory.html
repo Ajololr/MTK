@@ -164,6 +164,29 @@
             <button class="btn" id="checkBtn" onclick="checkAnswer()">Проверить ответ</button>
             <button class="btn" id="nextBtn">Следующий вопрос ></button>
         </div>
+        <div class="test-container__result" id="result">
+            <div class="test-container__result_user-info">
+                <p class="test-container__result_user-info_item">
+                    ФИО: <span id="resultName"></span>
+                </p>
+                <p class="test-container__result_user-info_item">
+                    Группа: <span id="resultGroup"></span>
+                </p>
+                <p class="test-container__result_user-info_item">
+                    Оценка: <span id="resultMark"></span>
+                </p>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Номер вопроса</th>
+                    <th>Статус</th>
+                    <th>Баллы</th>
+                </tr>
+                </thead>
+                <tbody id="resultTableBody"></tbody>
+            </table>
+        </div>
     </div>
 </div>
 
