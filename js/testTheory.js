@@ -3,19 +3,22 @@ const QUESTIONS_AMOUNT = 10;
 
 let testWithHints;
 
-let testBlock;
-let buttonsBlockRef;
-let mainBlock;
+let mainBlockRef;
 let testTypeBlockRef;
 let userFormRef;
+let testBlockRef;
+let buttonsBlockRef;
+let resultRef;
 
 let questionNumberRef;
 let questionDescriptionRef;
 let questionAnswersRef;
 
-let answeredCounterRef;
+let checkBtnRef;
+let previousBtnRef;
+let nextBtnRef;
 
-let resultRef;
+let answeredCounterRef;
 let resultTableBodyRef;
 let questionNumber = 0;
 let answeredNumber = 0;
@@ -29,22 +32,22 @@ let questions = [];
 const questionResultMap = new Map();
 
 window.onload = function () {
+    mainBlockRef = document.getElementById("mainBlock");
+    testTypeBlockRef = document.getElementById("testType");
     userFormRef = document.getElementById('userForm');
-    userFormRef.style.display = "none";
-    testBlock = document.getElementById("questionBlock");
-    testBlock.style.display = "none";
+    testBlockRef = document.getElementById("testBlock");
     buttonsBlockRef = document.getElementById("buttonsBlock");
-    buttonsBlockRef.style.display = "none";
     resultRef = document.getElementById("result");
-    resultRef.style.display = "none";
+
+    mainBlockRef.removeChild(userFormRef);
+    mainBlockRef.removeChild(testBlockRef);
+    mainBlockRef.removeChild(buttonsBlockRef);
+    mainBlockRef.removeChild(resultRef);
 };
 
-function initializeQuestions() {
-    answeredCounterRef = document.getElementById("answeredCounter");
-    questionNumberRef = document.getElementById("questionNumber");
-    questionDescriptionRef = document.getElementById("questionDescription");
-    questionAnswersRef = document.getElementById("questionAnswers");
 
+
+function initializeQuestions() {
     $.getJSON("../sources/questions.json", function (data) {
         $.each(data, function (key, value) {
             questions.push({
@@ -77,18 +80,31 @@ function getArrayQuestions() {
 
 function showQuestion() {
     let currentQuestion = currentQuestions[questionNumber];
-    let answersTemplate = '';
+    questionAnswersRef.innerHTML = "";
     questionNumber++;
     questionNumberRef.innerText = "Вопрос " + (questionNumber);
     questionDescriptionRef.innerText = currentQuestion.question;
     currentQuestion.answers.forEach((answer, i) => {
-        answersTemplate += "<li>" +
-            "<input type=\"radio\" class=\"radioButton\" name=\"radio\" id=\"" + i + "\" value=\"" + i + "\" " + "style=\"margin-right: 0.5rem\"" + ">" + answer + "</li>";
+        const answerRef = document.createElement("li");
+        const radioBtnRef = document.createElement("input");
+        radioBtnRef.setAttribute("type", "radio");
+        radioBtnRef.setAttribute("class", "radio-button");
+        radioBtnRef.setAttribute("name", "radio");
+        radioBtnRef.setAttribute("id", i);
+        radioBtnRef.setAttribute("value", i);
+        answerRef.appendChild(radioBtnRef);
+        answerRef.append(answer);
+        questionAnswersRef.appendChild(answerRef);
     });
-    document.getElementById("checkBtn").disabled = !(testWithHints && questionResultMap.has(questionNumber));
-    questionAnswersRef.innerHTML = answersTemplate ? answersTemplate : '';
-    questionResultMap.has(questionNumber) ? preselectAnswer(questionResultMap.get(questionNumber)) : '';
-    addAnswersCheckForTestWithHints();
+    if (questionResultMap.has(questionNumber)) {
+        preselectAnswer(questionResultMap.get(questionNumber));
+        if (testWithHints) {
+            checkBtnRef.disabled = false;
+        }
+    } else if (testWithHints){
+        checkBtnRef.disabled = true;
+    }
+    addEventsForAnswers();
 }
 
 function preselectAnswer(value) {
@@ -101,12 +117,12 @@ function preselectAnswer(value) {
     });
 }
 
-function addAnswersCheckForTestWithHints() {
+function addEventsForAnswers() {
     const answersRef = questionAnswersRef.children;
     Array.from(answersRef).forEach(answer => {
         const radioBtnRef = answer.children[0];
         radioBtnRef.addEventListener("click", () => {
-            testWithHints ? document.getElementById("checkBtn").disabled = false : '';
+            testWithHints ? checkBtnRef.disabled = false : '';
             !questionResultMap.has(questionNumber) ? answeredCounterRef.innerHTML = ++answeredNumber + "/10" : '';
             questionResultMap.set(questionNumber, radioBtnRef.value);
         });
@@ -119,39 +135,50 @@ function startTest() {
     userName = document.getElementById("userName").value;
     userGroup = document.getElementById("userGroup").value;
 
-
     if (!userName || !userSurname || !userGroup) {
         alert("Заполните все поля");
         return;
     }
-
-    document.getElementById('userForm').style.display = 'none';
+    mainBlockRef.removeChild(userFormRef);
+    userFormRef = null;
 
     initializeQuestions();
 
-    document.getElementById('questionBlock').style.display = 'flex';
-    buttonsBlockRef.style.display = 'flex';
+    mainBlockRef.appendChild(testBlockRef);
+    mainBlockRef.appendChild(buttonsBlockRef);
+
+    answeredCounterRef = document.getElementById("answeredCounter");
+    questionNumberRef = document.getElementById("questionNumber");
+    questionDescriptionRef = document.getElementById("questionDescription");
+    questionAnswersRef = document.getElementById("questionAnswers");
+    checkBtnRef = document.getElementById("checkBtn");
+    previousBtnRef = document.getElementById('previousBtn');
+    nextBtnRef = document.getElementById("nextBtn");
+
     if (testWithHints) {
-        document.getElementById("checkBtn").disabled = true;
+        checkBtnRef.disabled = true;
     } else {
-        document.getElementById("checkBtn").style.display = 'none';
+        buttonsBlockRef.removeChild(checkBtnRef);
+        checkBtnRef = null;
     }
-    document.getElementById("nextBtn").addEventListener('click', nextQuestion);
-    document.getElementById('previousBtn').addEventListener('click', previousQuestion);
-    document.getElementById('previousBtn').style.opacity = '50%';
+    nextBtnRef.addEventListener('click', nextQuestion);
+    previousBtnRef.addEventListener('click', previousQuestion);
+    previousBtnRef.style.opacity = '50%';
 }
 
 function showResultBlock() {
+    mainBlockRef.removeChild(testBlockRef);
+    testBlockRef = null;
+    mainBlockRef.removeChild(buttonsBlockRef);
+    testBlockRef = null;
+    mainBlockRef.appendChild(resultRef);
+
     document.getElementById("resultName").innerText = userSurname + " " + userName;
     document.getElementById("resultGroup").innerText = userGroup;
     document.getElementById("resultMark").innerText = calculateMark().toString();
 
     resultTableBodyRef = document.getElementById("resultTableBody");
     createResultTable();
-
-    testBlock.style.display = "none";
-    buttonsBlockRef.style.display = "none";
-    resultRef.style.display = "flex";
 }
 
 function calculateMark() {
@@ -168,12 +195,15 @@ function createResultTable() {
 
         const numCol = document.createElement("td");
         numCol.innerText = (i + 1).toString();
+
         const statusCol = document.createElement("td");
         const statusImg = document.createElement("span");
         statusImg.setAttribute("class", checkCorrectAnswer(i) ? "question-status-true" : "question-status-false");
         statusCol.appendChild(statusImg);
+
         const scoreCol = document.createElement("td");
         scoreCol.innerText = checkCorrectAnswer(i) ? "1" : "0";
+
         row.appendChild(numCol);
         row.appendChild(statusCol);
         row.appendChild(scoreCol);
@@ -192,9 +222,9 @@ function checkCorrectAnswer(questionNumber) {
 
 function nextQuestion(event) {
     if (questionNumber < 10) {
-        document.getElementById('previousBtn').style.opacity = '100%';
+        previousBtnRef.style.opacity = '100%';
         if (questionNumber === 9) {
-            document.getElementById("nextBtn").innerText = "Закончить тест";
+            nextBtnRef.innerText = "Закончить тест";
         }
         showQuestion();
         event.stopPropagation();
@@ -206,15 +236,15 @@ function nextQuestion(event) {
 
 function previousQuestion(event) {
     if (questionNumber > 1) {
-        document.getElementById("nextBtn").innerText = "Следующий вопрос >";
+        nextBtnRef.innerText = "Следующий вопрос >";
         questionNumber -= 2;
         showQuestion();
         if (questionNumber === 1) {
-            document.getElementById('previousBtn').style.opacity = '50%';
+            previousBtnRef.style.opacity = '50%';
         }
         event.stopPropagation();
     } else {
-        document.getElementById('previousBtn').style.opacity = '50%';
+        previousBtnRef.style.opacity = '50%';
     }
 }
 
@@ -227,9 +257,9 @@ function UserResult(userName, group, mark, date) {
 
 function chooseTest(withHints) {
     testWithHints = withHints;
-    testTypeBlockRef = document.getElementById("testType");
-    testTypeBlockRef.style.display = "none";
-    userFormRef.style.display = "flex";
+    mainBlockRef.removeChild(testTypeBlockRef);
+    testTypeBlockRef = null;
+    mainBlockRef.appendChild(userFormRef);
 }
 
 function checkAnswer() {
@@ -237,10 +267,10 @@ function checkAnswer() {
     const currentValue = questionResultMap.get(questionNumber);
     const correctValue = currentQuestions[questionNumber - 1].correctAnswer;
     if (currentValue === correctValue - 1) {
-        answersRef[currentValue].className = "bg-success";
+        answersRef[currentValue].className = "correct-answer";
     } else {
-        answersRef[currentValue].className = "bg-danger";
-        answersRef[correctValue - 1].className = "bg-success";
+        answersRef[currentValue].className = "incorrect-answer";
+        answersRef[correctValue - 1].className = "correct-answer";
     }
 }
 
