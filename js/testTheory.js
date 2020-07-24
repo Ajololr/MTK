@@ -1,9 +1,10 @@
-const idInLocalStorage = "ResultListForR429Test";
+const idInLocalStorage = "MTK-240TestResult";
+const QUESTIONS_AMOUNT = 10;
 
-let testWithTips;
+let testWithHints;
 
 let testBlock;
-let buttonsBlock;
+let buttonsBlockRef;
 let mainBlock;
 let testTypeBlockRef;
 let userFormRef;
@@ -12,10 +13,12 @@ let questionNumberRef;
 let questionDescriptionRef;
 let questionAnswersRef;
 
-let answeredCounter;
+let answeredCounterRef;
 
-let resultTable;
+let resultRef;
+let resultTableBodyRef;
 let questionNumber = 0;
+let answeredNumber = 0;
 let userSurname;
 let userName;
 let userGroup;
@@ -23,33 +26,21 @@ let userGroup;
 let currentQuestions = [];
 let questions = [];
 
-const questionResult = new Map();
+const questionResultMap = new Map();
 
 window.onload = function () {
     userFormRef = document.getElementById('userForm');
     userFormRef.style.display = "none";
     testBlock = document.getElementById("questionBlock");
     testBlock.style.display = "none";
-    buttonsBlock = document.getElementById("buttonsBlock");
-    buttonsBlock.style.display = "none";
-    resultTable = document.getElementById("tableResult");
-    resultTable.style.display = "none";
-
-
-    document.getElementById("show").addEventListener("click", () => {
-        let resultList = JSON.parse(localStorage.getItem(idInLocalStorage));
-
-        if (resultList !== undefined) {
-            if (resultList.length !== 0) {
-                showResultsForAllTimes(resultList);
-            }
-        }
-
-    });
+    buttonsBlockRef = document.getElementById("buttonsBlock");
+    buttonsBlockRef.style.display = "none";
+    resultRef = document.getElementById("result");
+    resultRef.style.display = "none";
 };
 
 function initializeQuestions() {
-    answeredCounter = document.getElementById("answeredCounter");
+    answeredCounterRef = document.getElementById("answeredCounter");
     questionNumberRef = document.getElementById("questionNumber");
     questionDescriptionRef = document.getElementById("questionDescription");
     questionAnswersRef = document.getElementById("questionAnswers");
@@ -69,35 +60,57 @@ function initializeQuestions() {
 }
 
 function mixArrayQuestions() {
-    let currentIndex = questions.length;
-    let tempValue;
-    let randomIndex;
-    while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        tempValue = questions[currentIndex];
-        questions[currentIndex] = questions[randomIndex];
-        questions[randomIndex] = tempValue;
+    questions = shuffle(questions);
+}
+
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
     }
-    questions.reverse();
+    return a;
 }
 
 function getArrayQuestions() {
-    currentQuestions = questions.slice(0, 10);
+    currentQuestions = questions.slice(0, QUESTIONS_AMOUNT + 1);
 }
 
 function showQuestion() {
     let currentQuestion = currentQuestions[questionNumber];
     let answersTemplate = '';
-    questionNumberRef.innerText = "Вопрос " + (questionNumber + 1);
+    questionNumber++;
+    questionNumberRef.innerText = "Вопрос " + (questionNumber);
     questionDescriptionRef.innerText = currentQuestion.question;
     currentQuestion.answers.forEach((answer, i) => {
         answersTemplate += "<li>" +
-            "<input type=\"radio\" class=\"radioButton\" id=\"" + i + "\" value=\"" + i + "\" " + "style=\"margin-right: 0.5rem\"" + ">" + answer + "</li>";
+            "<input type=\"radio\" class=\"radioButton\" name=\"radio\" id=\"" + i + "\" value=\"" + i + "\" " + "style=\"margin-right: 0.5rem\"" + ">" + answer + "</li>";
     });
+    document.getElementById("checkBtn").disabled = !(testWithHints && questionResultMap.has(questionNumber));
     questionAnswersRef.innerHTML = answersTemplate ? answersTemplate : '';
-    questionNumber++;
-    answeredCounter.innerHTML = questionNumber + "/10";
+    questionResultMap.has(questionNumber) ? preselectAnswer(questionResultMap.get(questionNumber)) : '';
+    addAnswersCheckForTestWithHints();
+}
+
+function preselectAnswer(value) {
+    const answersRef = questionAnswersRef.children;
+    Array.from(answersRef).forEach(answer => {
+        const radioBtnRef = answer.children[0];
+        if (radioBtnRef.value === value) {
+            radioBtnRef.checked = true;
+        }
+    });
+}
+
+function addAnswersCheckForTestWithHints() {
+    const answersRef = questionAnswersRef.children;
+    Array.from(answersRef).forEach(answer => {
+        const radioBtnRef = answer.children[0];
+        radioBtnRef.addEventListener("click", () => {
+            testWithHints ? document.getElementById("checkBtn").disabled = false : '';
+            !questionResultMap.has(questionNumber) ? answeredCounterRef.innerHTML = ++answeredNumber + "/10" : '';
+            questionResultMap.set(questionNumber, radioBtnRef.value);
+        });
+    });
 }
 
 
@@ -117,117 +130,83 @@ function startTest() {
     initializeQuestions();
 
     document.getElementById('questionBlock').style.display = 'flex';
-    document.getElementById('buttonsBlock').style.display = 'flex';
+    buttonsBlockRef.style.display = 'flex';
+    if (testWithHints) {
+        document.getElementById("checkBtn").disabled = true;
+    } else {
+        document.getElementById("checkBtn").style.display = 'none';
+    }
     document.getElementById("nextBtn").addEventListener('click', nextQuestion);
     document.getElementById('previousBtn').addEventListener('click', previousQuestion);
     document.getElementById('previousBtn').style.opacity = '50%';
 }
 
-function saveResult() {
-    const radioButtonsRef = document.getElementsByClassName("radioButton");
-    Array.from(radioButtonsRef).forEach(btn => {
-        if (btn.checked) {
-            questionResult.set(questionNumber, btn.value);
-        }
-    });
-}
-
 function showResultBlock() {
-    mainBlock.style.display = "none";
-    resultTable.style.display = "block";
+    document.getElementById("resultName").innerText = userSurname + " " + userName;
+    document.getElementById("resultGroup").innerText = userGroup;
+    document.getElementById("resultMark").innerText = calculateMark().toString();
+
+    resultTableBodyRef = document.getElementById("resultTableBody");
+    createResultTable();
+
     testBlock.style.display = "none";
+    buttonsBlockRef.style.display = "none";
+    resultRef.style.display = "flex";
+}
+
+function calculateMark() {
     let result = 0;
-
-    for (let i = 1; i < 11; i++) {
-        let row = document.getElementById("question" + i);
-        let tdArray = row.querySelectorAll("td");
-        tdArray[0].innerText = currentQuestions[i - 1].question;
-        tdArray[1].innerText = "";
-        currentQuestions[i - 1].answer.forEach(function (elem) {
-            tdArray[1].innerText += currentQuestions[i - 1].allAnswer[elem - 1] + "\n ";
-        });
-        tdArray[2].innerText = "";
-        questionResult[i - 1].forEach(function (elem) {
-            tdArray[2].innerText += currentQuestions[i - 1].allAnswer[elem - 1] + "\n ";
-        });
-
-        if (tdArray[1].innerText === tdArray[2].innerText) {
-            result++;
-        }
+    for (let i = 0; i < QUESTIONS_AMOUNT; i++) {
+        checkCorrectAnswer(i) ? result++ : '';
     }
+    return 10 * (result / QUESTIONS_AMOUNT);
+}
 
-    document.getElementById("resultMark").innerHTML = "Ваша отметка: " + result;
+function createResultTable() {
+    for (let i = 0; i < QUESTIONS_AMOUNT; i++) {
+        const row = document.createElement("tr");
 
-    let now = new Date();
-
-    let resultObj = new UserResult(userName, group, result, now.toLocaleString("ru"));
-    let resultList = JSON.parse(localStorage.getItem(idInLocalStorage));
-
-    if (resultList === null) {
-        resultList = [];
+        const numCol = document.createElement("td");
+        numCol.innerText = (i + 1).toString();
+        const statusCol = document.createElement("td");
+        const statusImg = document.createElement("span");
+        statusImg.setAttribute("class", checkCorrectAnswer(i) ? "question-status-true" : "question-status-false");
+        statusCol.appendChild(statusImg);
+        const scoreCol = document.createElement("td");
+        scoreCol.innerText = checkCorrectAnswer(i) ? "1" : "0";
+        row.appendChild(numCol);
+        row.appendChild(statusCol);
+        row.appendChild(scoreCol);
+        resultTableBodyRef.appendChild(row);
     }
-
-    resultList.push(resultObj);
-    localStorage.setItem(idInLocalStorage, JSON.stringify(resultList));
 }
 
-function showResultsForAllTimes(list) {
-    let table = document.createElement("table");
-    table.id = idInLocalStorage;
-    table.className = "table-bordered";
-    let thead = document.createElement("thead");
-    thead.appendChild(createRow("th", ["ФИО", "Группа", "Результат", "Время"]));
-
-    let tbody = document.createElement("tbody");
-    list.forEach((elem) => {
-        tbody.appendChild(createRow("td", [
-            elem._userName,
-            elem._group,
-            elem._mark,
-            elem._date,
-        ]));
-    });
-
-    table.appendChild(thead);
-    table.appendChild(tbody);
-
-    document.getElementById("mainContainer").appendChild(table);
+function checkCorrectAnswer(questionNumber) {
+    if (questionResultMap.has(questionNumber + 1)) {
+        const correctAnswer = currentQuestions[questionNumber].correctAnswer;
+        return (correctAnswer - 1).toString() === questionResultMap.get(questionNumber + 1)
+    }
+    return false;
 }
 
-function createRow(tagName, arr) {
-    let row = document.createElement("tr");
-
-    arr.forEach((elem) => {
-        let tag = document.createElement(tagName);
-        let p = document.createElement("p");
-        p.innerHTML = elem;
-        tag.appendChild(p);
-        row.appendChild(tag);
-    });
-
-    return row;
-}
 
 function nextQuestion(event) {
     if (questionNumber < 10) {
         document.getElementById('previousBtn').style.opacity = '100%';
         if (questionNumber === 9) {
-            document.getElementById("nextBtn").style.opacity = '50%';
+            document.getElementById("nextBtn").innerText = "Закончить тест";
         }
-        saveResult();
         showQuestion();
         event.stopPropagation();
     } else {
         event.stopPropagation();
-        saveResult();
         showResultBlock();
-        console.log(questionResult);
     }
 }
 
 function previousQuestion(event) {
     if (questionNumber > 1) {
-        document.getElementById("nextBtn").style.opacity = '100%';
+        document.getElementById("nextBtn").innerText = "Следующий вопрос >";
         questionNumber -= 2;
         showQuestion();
         if (questionNumber === 1) {
@@ -246,9 +225,25 @@ function UserResult(userName, group, mark, date) {
     this._date = date;
 }
 
-function chooseTest(withTips) {
-    testWithTips = withTips;
+function chooseTest(withHints) {
+    testWithHints = withHints;
     testTypeBlockRef = document.getElementById("testType");
     testTypeBlockRef.style.display = "none";
     userFormRef.style.display = "flex";
+}
+
+function checkAnswer() {
+    const answersRef = questionAnswersRef.children;
+    const currentValue = questionResultMap.get(questionNumber);
+    const correctValue = currentQuestions[questionNumber - 1].correctAnswer;
+    if (currentValue === correctValue - 1) {
+        answersRef[currentValue].className = "bg-success";
+    } else {
+        answersRef[currentValue].className = "bg-danger";
+        answersRef[correctValue - 1].className = "bg-success";
+    }
+}
+
+function showHint() {
+
 }

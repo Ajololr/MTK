@@ -76,6 +76,27 @@
     margin-top: 5rem;
 }
 
+.test-container__result {
+    display: flex;
+    flex-direction: column;
+}
+
+.test-container__result_user-info {
+    height: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: #d9edf7;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+}
+
+.test-container__result_user-info_item {
+    margin-bottom: 0;
+}
+
 
 
 
@@ -115,4 +136,20 @@
 
 .result div:nth-child(3) {
     grid-column: 3;
+}
+
+.question-status-true {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/true.png");
+    background-repeat: no-repeat;
+}
+
+.question-status-false {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/false.png");
+    background-repeat: no-repeat;
 }

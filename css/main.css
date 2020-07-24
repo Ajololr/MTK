@@ -55,7 +55,8 @@ body {
 
 /*Footer container*/
 .footer-container {
-    position: absolute;
+    position: fixed;
+    z-index: -1;
     bottom: 0;
     display: flex;
     flex: 0 0 100%;
