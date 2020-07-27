@@ -2,13 +2,14 @@ const idInLocalStorage = "MTK-240TestResult";
 const QUESTIONS_AMOUNT = 10;
 
 let testWithHints;
+let hintActive;
 
 let mainBlockRef;
 let testTypeBlockRef;
 let userFormRef;
 let testBlockRef;
 let buttonsBlockRef;
-let resultRef;
+let resultBlockRef;
 
 let questionNumberRef;
 let questionDescriptionRef;
@@ -20,6 +21,10 @@ let nextBtnRef;
 
 let answeredCounterRef;
 let resultTableBodyRef;
+
+let hintBlockRef;
+let hintBtnRef;
+
 let questionNumber = 0;
 let answeredNumber = 0;
 let userSurname;
@@ -37,12 +42,14 @@ window.onload = function () {
     userFormRef = document.getElementById('userForm');
     testBlockRef = document.getElementById("testBlock");
     buttonsBlockRef = document.getElementById("buttonsBlock");
-    resultRef = document.getElementById("result");
+    resultBlockRef = document.getElementById("resultBlock");
+    hintBlockRef = document.getElementById("hintBlock");
 
     mainBlockRef.removeChild(userFormRef);
     mainBlockRef.removeChild(testBlockRef);
     mainBlockRef.removeChild(buttonsBlockRef);
-    mainBlockRef.removeChild(resultRef);
+    mainBlockRef.removeChild(resultBlockRef);
+    mainBlockRef.removeChild(hintBlockRef);
 };
 
 
@@ -53,7 +60,8 @@ function initializeQuestions() {
             questions.push({
                 question: value.question,
                 answers: value.answers,
-                correctAnswer: value.correctAnswer
+                correctAnswer: value.correctAnswer,
+                hintText: value.hintText
             });
         });
         mixArrayQuestions();
@@ -103,6 +111,10 @@ function showQuestion() {
         }
     } else if (testWithHints){
         checkBtnRef.disabled = true;
+        if (hintActive) {
+            mainBlockRef.removeChild(hintBlockRef);
+            hintActive = false;
+        }
     }
     addEventsForAnswers();
 }
@@ -152,6 +164,7 @@ function startTest() {
     questionDescriptionRef = document.getElementById("questionDescription");
     questionAnswersRef = document.getElementById("questionAnswers");
     checkBtnRef = document.getElementById("checkBtn");
+    hintBtnRef = document.getElementById("hintBtn");
     previousBtnRef = document.getElementById('previousBtn');
     nextBtnRef = document.getElementById("nextBtn");
 
@@ -159,7 +172,9 @@ function startTest() {
         checkBtnRef.disabled = true;
     } else {
         buttonsBlockRef.removeChild(checkBtnRef);
+        buttonsBlockRef.removeChild(hintBtnRef);
         checkBtnRef = null;
+        hintBtnRef = null;
     }
     nextBtnRef.addEventListener('click', nextQuestion);
     previousBtnRef.addEventListener('click', previousQuestion);
@@ -171,7 +186,12 @@ function showResultBlock() {
     testBlockRef = null;
     mainBlockRef.removeChild(buttonsBlockRef);
     testBlockRef = null;
-    mainBlockRef.appendChild(resultRef);
+    if (hintActive) {
+        mainBlockRef.removeChild(hintBlockRef);
+        hintActive = false;
+        hintBlockRef = null;
+    }
+    mainBlockRef.appendChild(resultBlockRef);
 
     document.getElementById("resultName").innerText = userSurname + " " + userName;
     document.getElementById("resultGroup").innerText = userGroup;
@@ -186,7 +206,7 @@ function calculateMark() {
     for (let i = 0; i < QUESTIONS_AMOUNT; i++) {
         checkCorrectAnswer(i) ? result++ : '';
     }
-    return 10 * (result / QUESTIONS_AMOUNT);
+    return Math.round(10 * (result / QUESTIONS_AMOUNT));
 }
 
 function createResultTable() {
@@ -275,5 +295,13 @@ function checkAnswer() {
 }
 
 function showHint() {
+    hintBlockRef.children[1].innerText = currentQuestions[questionNumber - 1].hintText;
+    mainBlockRef.insertBefore(hintBlockRef, buttonsBlockRef);
+    hintActive = true;
+}
 
+function hideHint() {
+    hintBlockRef.children[1].innerText = "";
+    mainBlockRef.removeChild(hintBlockRef);
+    hintActive = false;
 }

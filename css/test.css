@@ -170,3 +170,31 @@
 .radio-button {
     margin-right: 0.5rem
 }
+
+.test-container__hint {
+    margin-top: 2rem;
+    max-width: min-content;
+    display: flex;
+    flex-direction: column;
+    background-color: #fcf8e3;
+    border-radius: 3px;
+}
+
+.test-container__hint-close {
+    margin: 0.5rem;
+    display: block;
+    align-self: flex-end;
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/close-hint.png");
+    background-repeat: no-repeat;
+    opacity: 70%;
+}
+
+.test-container__hint-close:hover {
+    opacity: 100%;
+}
+
+.test-container__hint-value {
+    padding: 0 1rem;
+}
