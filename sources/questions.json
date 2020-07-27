@@ -11,7 +11,7 @@
     "correctAnswer": [
       3
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Напряжение сети постоянного тока, необходимое для питания МТК-240Б ?",
@@ -25,7 +25,7 @@
     "correctAnswer": [
       3
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Диапазон рабочих температур МТК-240Б ?",
@@ -39,7 +39,7 @@
     "correctAnswer": [
       1
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Что обеспечивается МТК-240Б с помощью оборудования кроссовой коммутации ?",
@@ -53,7 +53,7 @@
     "correctAnswer": [
       5
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Что обеспечивается МТК-240Б с помощью аппаратуры криптографической защиты информации ?",
@@ -67,7 +67,7 @@
     "correctAnswer": [
       2
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Что обеспечивается МТК-240Б С помощью аппаратуры цифровых систем передачи (ЦСП)?",
@@ -81,7 +81,7 @@
     "correctAnswer": [
       5
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Что обеспечивается МТК-240Б С помощью встроенной панельной ПЭВМ ?",
@@ -95,7 +95,7 @@
     "correctAnswer": [
       4
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Масса полностью укомплектованного контейнера (не более) ?",
@@ -109,7 +109,7 @@
     "correctAnswer": [
       3
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Масса кейса с АКБ (не более) ?",
@@ -123,7 +123,7 @@
     "correctAnswer": [
       3
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Масса контейнера для телефонных аппаратов (ТА) (не более) ?",
@@ -137,7 +137,7 @@
     "correctAnswer": [
       3
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Диапазон температур при хранении и транспортировании в ударопрочных, пыле- и влагозащищенных контейнере и кейсах со степенью защиты IP-67 ?",
@@ -151,7 +151,7 @@
     "correctAnswer": [
       5
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Что не входит в состав МТК-240Б ?",
@@ -165,7 +165,7 @@
     "correctAnswer": [
       4
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Что не входит в состав контейнера для ТА МТК-240Б ?",
@@ -179,7 +179,7 @@
     "correctAnswer": [
       2
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   },
   {
     "question": "Предназначение МТК-240Б ?",
@@ -193,7 +193,7 @@
     "correctAnswer": [
       2
     ],
-    "hint": ""
+    "hintText": "qweqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqqqqqq qqqqqqqqqqqqqqqq"
   }
 ]
 

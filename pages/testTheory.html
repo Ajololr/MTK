@@ -159,12 +159,17 @@
                 <ul class="test-container__question-container_answers-list" id="questionAnswers"></ul>
             </div>
         </div>
+        <div class="test-container__hint" id="hintBlock">
+            <span class="test-container__hint-close" onclick="hideHint()"></span>
+            <p class="test-container__hint-value" id="hintText"></p>
+        </div>
         <div class="test-container__buttons" id="buttonsBlock">
             <button class="btn" id="previousBtn">< Предыдущий вопрос</button>
             <button class="btn" id="checkBtn" onclick="checkAnswer()">Проверить ответ</button>
+            <button class="btn" id="hintBtn" onclick="showHint()">Подсказка</button>
             <button class="btn" id="nextBtn">Следующий вопрос ></button>
         </div>
-        <div class="test-container__result" id="result">
+        <div class="test-container__result" id="resultBlock">
             <div class="test-container__result_user-info">
                 <p class="test-container__result_user-info_item">
                     ФИО: <span id="resultName"></span>
@@ -191,7 +196,7 @@
 </div>
 
 <footer class="container-fluid footer-container">
-    <p>© 2020 Artyom Zakharchenko, BSUIR</p>
+    <p>© 2020 Artyom Zakharenko, BSUIR</p>
 </footer>
 
 </body>
