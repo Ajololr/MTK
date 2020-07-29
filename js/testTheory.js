@@ -1,5 +1,5 @@
 const idInLocalStorage = "MTK-240TestResult";
-const QUESTIONS_AMOUNT = 10;
+const QUESTIONS_AMOUNT = 20;
 
 let testWithHints;
 let hintActive;
@@ -135,7 +135,7 @@ function addEventsForAnswers() {
         const radioBtnRef = answer.children[0];
         radioBtnRef.addEventListener("click", () => {
             testWithHints ? checkBtnRef.disabled = false : '';
-            !questionResultMap.has(questionNumber) ? answeredCounterRef.innerHTML = ++answeredNumber + "/10" : '';
+            !questionResultMap.has(questionNumber) ? answeredCounterRef.innerHTML = ++answeredNumber + "/20" : '';
             questionResultMap.set(questionNumber, radioBtnRef.value);
         });
     });
@@ -241,9 +241,9 @@ function checkCorrectAnswer(questionNumber) {
 
 
 function nextQuestion(event) {
-    if (questionNumber < 10) {
+    if (questionNumber < QUESTIONS_AMOUNT) {
         previousBtnRef.style.opacity = '100%';
-        if (questionNumber === 9) {
+        if (questionNumber === QUESTIONS_AMOUNT - 1) {
             nextBtnRef.innerText = "Закончить тест";
         }
         showQuestion();
