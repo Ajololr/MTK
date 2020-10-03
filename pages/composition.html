@@ -1,178 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Состав МТК-240Б</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="../lib/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="shortcut icon" href="../images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="../images/favicon/favicon.ico"
+      type="image/x-icon"
+    />
 
     <script src="../lib/jquery.min.js"></script>
     <script src="../lib/bootstrap.min.js"></script>
-</head>
-<body>
-
-<header class="navbar navbar-expand-lg navbar-light header">
-    <div class="container-fluid">
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-light header">
+      <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="../index.html">МТК-240Б</a>
+          <a class="navbar-brand" href="../index.html">МТК-240Б</a>
         </div>
         <div class="nav-item" id="myNavbar">
-            <ul class="nav navbar-nav ">
-                <li class="header-menu-item">
-                    <a href="../index.html">
-                        <button class="btn header-menu-item-button">
-                            Домашняя страница
-                        </button>
-                    </a>
+          <ul class="nav navbar-nav">
+            <li class="header-menu-item">
+              <a href="../index.html">
+                <button class="btn header-menu-item-button">
+                  Домашняя страница
+                </button>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownTheory"
+                data-toggle="dropdown"
+              >
+                Теория
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownTheory">
+                <li class="dropdown-item">
+                  <a href="tth.html"
+                    >Тактико-технические характеристики МТК-240Б</a
+                  >
                 </li>
-                <li class="header-menu-item">
-                    <button class="btn dropdown-toggle header-menu-item-button" id="dropdownTheory"
-                            data-toggle="dropdown">
-                        Теория
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownTheory">
-                        <li class="dropdown-item">
-                            <a href="./tth.html">Тактико-технические характеристики МТК-240Б</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./#">Состав комплекса</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./composition.html">Устройство комплекса</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./tb.html">Требования безопасности при подготовке
-                                комплекса к работе</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./usage.html">Варианты применения</a>
-                        </li>
-                    </ul>
+                <li class="dropdown-item">
+                  <a href="./composition.html">Состав комплекса</a>
                 </li>
-                <li class="header-menu-item">
-                    <button class="btn dropdown-toggle header-menu-item-button" id="dropdownPractice"
-                            data-toggle="dropdown">
-                        Практика
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
-                        <li class="dropdown-item">
-                            <a href="../images/#">
-                                Порядок настройки и подготовки комплекса к работе
-                            </a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="../images/#" download>
-                                Работа на станции
-                            </a>
-                        </li>
-                    </ul>
+                <li class="dropdown-item">
+                  <a href="./tb.html"
+                    >Требования безопасности при подготовке комплекса к
+                    работе</a
+                  >
                 </li>
-                <li class="header-menu-item">
-                    <button class="btn dropdown-toggle header-menu-item-button" id="dropdownTestKnowledge"
-                            data-toggle="dropdown">
-                        Контроль знаний
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
-                        <li class="dropdown-item">
-                            <a href="./testTheory.html">
-                                Тест по теории
-                            </a>
-                        </li>
-                    </ul>
+                <li class="dropdown-item">
+                  <a href="usage.html">Варианты применения</a>
                 </li>
-                <li class="header-menu-item">
-                    <a href="./gallery.html">
-                        <button class="btn header-menu-item-button">
-                            Галерея
-                        </button>
-                    </a>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownPractice"
+                data-toggle="dropdown"
+              >
+                Практика
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
+                <li class="dropdown-item">
+                  <a href="../images/#">
+                    Порядок настройки и подготовки комплекса к работе
+                  </a>
                 </li>
-                <li class="header-menu-item">
-                    <a href="about.html">
-                        <button class="btn header-menu-item-button">
-                            О программе
-                        </button>
-                    </a>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownTestKnowledge"
+                data-toggle="dropdown"
+              >
+                Контроль знаний
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
+                <li class="dropdown-item">
+                  <a href="./testTheory.html"> Тест по теории </a>
                 </li>
-            </ul>
+                <li class="dropdown-item">
+                  <a href="../images/#" download> Работа на станции </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <a href="gallery.html">
+                <button class="btn header-menu-item-button">Галерея</button>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <a href="about.html">
+                <button class="btn header-menu-item-button">О программе</button>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="nav-item">
-            <ul class="header-icons-container">
-                <li class="header-icons-container-item">
-                    <a class="emblem" href="https://www.bsuir.by">
-                        <img class="header-icons-container-item-icon" src="../images/emblems/bsuir.png"/>
-                    </a>
-                </li>
-                <li class="header-icons-container-item">
-                    <a class="emblem" href="http://www.mil.by/ru/education/bsuir">
-                        <img class="header-icons-container-item-icon" src="../images/emblems/militaryFaculty.png">
-                    </a>
-                </li>
-            </ul>
+          <ul class="header-icons-container">
+            <li class="header-icons-container-item">
+              <a class="emblem" href="https://www.bsuir.by">
+                <img
+                  class="header-icons-container-item-icon"
+                  src="../images/emblems/bsuir.png"
+                />
+              </a>
+            </li>
+            <li class="header-icons-container-item">
+              <a class="emblem" href="http://www.mil.by/ru/education/bsuir">
+                <img
+                  class="header-icons-container-item-icon"
+                  src="../images/emblems/militaryFaculty.png"
+                />
+              </a>
+            </li>
+          </ul>
         </div>
-    </div>
-</header>
+      </div>
+    </header>
 
-<div class="container content-container">
+    <div class="container content-container">
+      <!--INSERT IMAGES-->
 
-    <!--INSERT IMAGES-->
+      <h2 id="title" style="text-align: center; font-weight: bold">
+        Состав MTK 240Б
+      </h2>
 
-    <h2 id="title" style="text-align: center; font-weight: bold">Состав MTK 240Б</h2>
-
-    <h4 style="font-weight: bold; font-style: italic;">В состав MTK 240Б входят:</h4>
-    <ul>
+      <h4 style="font-weight: bold; font-style: italic">
+        В состав MTK 240Б входят:
+      </h4>
+      <ul>
         <li>Контейнер (мобильный 19” телекоммуникационный шкаф) - 1 шт.;</li>
         <li>Станция телефонная АТСЭ ФМС (блок БМК) (19”, 1U) - 1 шт.;</li>
-        <li>Аппаратура цифровых систем передачи Орион-3 (19” автономная) - 2 шт (в т.ч. выносная);</li>
-        <li>Место для установки аппаратуры АЕ1-600А - 1 шт. (комплектуется по месту эксплуатации);</li>
+        <li>
+          Аппаратура цифровых систем передачи Орион-3 (19” автономная) - 2 шт (в
+          т.ч. выносная);
+        </li>
+        <li>
+          Место для установки аппаратуры АЕ1-600А - 1 шт. (комплектуется по
+          месту эксплуатации);
+        </li>
         <li>Система электропитания на 48(60)В - 1 шт.;</li>
         <li>Панель коммутации - 1 шт.;</li>
-        <li>Панель управления - 1 шт.;</li>
-        <li>ЗИП-О (в сумке-кармане контейнера) - 1 шт.;</li>
-        <li>Эксплуатационная документация (в сумке-кармане контейнера) - 1 шт.;</li>
-    </ul>
+        <li>ПЭВМ - 1 шт.;</li>
+        <li>
+          Эксплуатационная документация (в сумке-кармане контейнера) - 1 шт.;
+        </li>
+      </ul>
 
-    <img class="img-fluid" src="../images/composition/composition_1.jpg"/>
-    <img class="img-fluid" src="../images/composition/composition_2.jpg"/>
+      <img class="img-fluid" src="../images/composition/composition_1.jpg" />
+      <img class="img-fluid" src="../images/composition/composition_2.jpg" />
 
-
-    <h4 style="font-weight: bold; font-style: italic;">Cостав блока аккумуляторных батарей:</h4>
-    <ul>
+      <h4 style="font-weight: bold; font-style: italic">
+        Cостав блока аккумуляторных батарей:
+      </h4>
+      <ul>
         <li>Кейс - 1 шт.;</li>
         <li>АКБ - 4 шт..</li>
-    </ul>
+      </ul>
 
-    <div>
+      <div>
         <span>
-            <h4 style="font-weight: bold; font-style: italic;">Cостав контейнера для ТА:</h4>
-            <ul>
-                <li>Кейс - 1 шт.;</li>
-                <li>Телефонные аппараты типа "Нефрит-2 АТС" - 16 шт.;</li>
-                <li>АРМ оперативного состава типа Ноутбук для ПД - 1 к-т;</li>
-                <li>Витая пара 20м - 2 к-та;</li>
-                <li>Провод заземления 5м - 1 к-т.</li>
-            </ul>
+          <h4 style="font-weight: bold; font-style: italic">
+            Cостав контейнера для ТА:
+          </h4>
+          <ul>
+            <li>Кейс - 1 шт.;</li>
+            <li>Телефонные аппараты типа "Нефрит-2 АТС" - 16 шт.;</li>
+            <li>АРМ оперативного состава типа Ноутбук для ПД - 1 к-т;</li>
+            <li>Витая пара 20м - 2 к-та;</li>
+            <li>Провод заземления 5м - 1 к-т.</li>
+          </ul>
         </span>
         <span>
-            <img class="img-fluid" src="../images/composition/composition_3.jpg"/>
+          <img
+            class="img-fluid"
+            src="../images/composition/composition_3.jpg"
+          />
         </span>
-    </div>
+      </div>
 
-    <h3 style="font-weight: bold; font-style: italic;">Комплекс мобильный телекоммуникационный МТК-240Б обеспечивает:</h3>
-    <ul>
-        <li>функционирование встроенного автоматизированного рабочего места оператора управления средствами связи, оборудованного ПЭВМ и соответствующим программным обеспечением;</li>
-        <li>организацию цифровой системы передачи с использованием модема Орион-3, обеспечивающего дуплексную передачу информации со скоростью до 5632 кбит/с (интерфейсы 4хЕ1 и 4хEthernet 10/100 BaseT) по одной паре кабеля П-274М длиной до 10 км.;</li>
-        <li>развертывание открытых сетей передачи данных и видеоконференцсвязи;</li>
+      <h3 style="font-weight: bold; font-style: italic">
+        Комплекс мобильный телекоммуникационный МТК-240Б обеспечивает:
+      </h3>
+      <ul>
+        <li>
+          функционирование встроенного автоматизированного рабочего места
+          оператора управления средствами связи, оборудованного ПЭВМ и
+          соответствующим программным обеспечением;
+        </li>
+        <li>
+          организацию цифровой системы передачи с использованием модема Орион-3,
+          обеспечивающего дуплексную передачу информации со скоростью до 5632
+          кбит/с (интерфейсы 4хЕ1 и 4хEthernet 10/100 BaseT) по одной паре
+          кабеля П-274М длиной до 10 км.;
+        </li>
+        <li>
+          развертывание открытых сетей передачи данных и видеоконференцсвязи;
+        </li>
         <li>шифрование/дешифрование с гарантированной стойкостью канала Е1;</li>
-        <li>развертывание засекреченных сетей передачи данных, видеоконференцсвязи, а также сети автоматической телефонной связи емкостью до 16 двухпроводных аналоговых абонентских линий;</li>
-        <li>автоматическую коммутацию абонентов, как между собой, так и на цифровой канал Е1;</li>
-        <li>ручную коммутацию открытых и засекреченных каналов Е1 и Ethernet 10/100BaseT с возможностью их вывода на кабельный ввод;</li>
-        <li>размещение телекоммуникационного оборудования в ударопрочном, пыле- и влагозащищенном контейнере.</li>
-    </ul>
-</div>
-
-</body>
+        <li>
+          развертывание засекреченных сетей передачи данных,
+          видеоконференцсвязи, а также сети автоматической телефонной связи
+          емкостью до 16 двухпроводных аналоговых абонентских линий;
+        </li>
+        <li>
+          автоматическую коммутацию абонентов, как между собой, так и на
+          цифровой канал Е1;
+        </li>
+        <li>
+          ручную коммутацию открытых и засекреченных каналов Е1 и Ethernet
+          10/100BaseT с возможностью их вывода на кабельный ввод;
+        </li>
+        <li>
+          размещение телекоммуникационного оборудования в ударопрочном, пыле- и
+          влагозащищенном контейнере.
+        </li>
+      </ul>
+    </div>
+  </body>
 </html>
