@@ -1,8 +1,14 @@
-.ats-container {
+.composition-section__title {
+  margin: 20px auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+.image-container {
   position: relative;
 }
 
-.ats-container__image {
+.image-container__image {
   width: 100%;
 }
 
@@ -10,46 +16,47 @@
   position: absolute;
   background: transparent;
   box-shadow: 2px 3px 5px green, -1px -1px 5px green;
+  cursor: pointer;
 }
 
-.ats-container__electr-button {
+.electr-button {
   top: 48%;
   left: 7%;
   width: 7%;
   height: 8%;
 }
 
-.ats-container__com-1-2-button {
+.com-1-2-button {
   top: 48%;
-  left: 7%;
-  width: 7%;
+  left: 25%;
+  width: 5%;
   height: 8%;
 }
 
-.ats-container__al-1-4-button {
-  top: 299px;
-  left: 290px;
-  width: 50px;
-  height: 50px;
+.al-1-4-button {
+  top: 48%;
+  left: 31%;
+  width: 5%;
+  height: 8%;
 }
 
-.ats-container__al-5-8-button {
-  top: 299px;
-  left: 290px;
-  width: 50px;
-  height: 50px;
+.al-5-8-button {
+  top: 48%;
+  left: 37%;
+  width: 6%;
+  height: 8%;
 }
 
-.ats-container__al-9-12-button {
-  top: 299px;
-  left: 350px;
-  width: 50px;
-  height: 50px;
+.al-9-12-button {
+  top: 48%;
+  left: 43%;
+  width: 6%;
+  height: 8%;
 }
 
-.ats-container__al-13-16-button {
-  top: 299px;
-  left: 405px;
-  width: 50px;
-  height: 50px;
+.al-13-16-button {
+  top: 48%;
+  left: 50%;
+  width: 5%;
+  height: 8%;
 }
