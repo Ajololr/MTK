@@ -8,6 +8,10 @@ body {
   flex-wrap: wrap;
 }
 
+.main-screen {
+  background: url("../images/mainPageImg/phone.jpg");
+}
+
 /*Header container*/
 .header {
   flex: 0 0 100%;

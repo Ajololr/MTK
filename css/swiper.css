@@ -1,0 +1,33 @@
+.swiper-container {
+  box-sizing: border-box;
+}
+
+.swiper-slide {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide__img {
+  max-width: 650px;
+  max-height: 650px;
+  border-radius: 10px;
+}
+
+.swiper-slide__text {
+  color: yellow;
+  margin-top: 15px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: white;
+  opacity: 0.5;
+}
+
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after {
+  opacity: 1;
+}
