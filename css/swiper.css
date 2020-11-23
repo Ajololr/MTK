@@ -17,13 +17,13 @@
 }
 
 .swiper-slide__text {
-  color: yellow;
+  color: black;
   margin-top: 15px;
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  color: white;
+  color: black;
   opacity: 0.5;
 }
 
