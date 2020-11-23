@@ -3,13 +3,13 @@
     "question": "Напряжение сети переменного тока, необходимое для питания МТК-240Б ?",
     "answers": ["210 В", "220 В", "230 В", "240 В", "310 В"],
     "correctAnswer": [3],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Напряжение сети постоянного тока, необходимое для питания МТК-240Б ?",
     "answers": ["12-24 В", "32-48 В", "48-60 В", "60-72 В", "310 В"],
     "correctAnswer": [3],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Диапазон рабочих температур МТК-240Б ?",
@@ -21,7 +21,7 @@
       "-25..+50 ºС"
     ],
     "correctAnswer": [1],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Что обеспечивается МТК-240Б с помощью оборудования кроссовой коммутации ?",
@@ -33,7 +33,7 @@
       "комплексная защита по току и напряжению всех линий"
     ],
     "correctAnswer": [5],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Что обеспечивается МТК-240Б с помощью аппаратуры криптографической защиты информации ?",
@@ -45,7 +45,7 @@
       "коммутация и подключение абонентов и пользователей"
     ],
     "correctAnswer": [2],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Что обеспечивается МТК-240Б С помощью аппаратуры цифровых систем передачи (ЦСП) ?",
@@ -57,7 +57,7 @@
       "подключение к взаимодействующим узлам связи или пунктам выделения каналов, в т.ч. РУЭС сети электросвязи общего пользования и т.д. по медному или волоконно-оптическому кабелю связи"
     ],
     "correctAnswer": [5],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Что обеспечивается МТК-240Б С помощью встроенной панельной ПЭВМ ?",
@@ -69,25 +69,25 @@
       "взаимодействие с другими АТС по двум защищенным цифровым потокам Е1 по стандарту G.703 с поддержкой сигнализации типа 1ВСК, 2ВСК и EDSS-1"
     ],
     "correctAnswer": [4],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Масса полностью укомплектованного контейнера (не более) ?",
     "answers": ["20 кг", "30 кг", "50 кг", "60 кг", "70 кг"],
     "correctAnswer": [3],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Масса кейса с АКБ (не более) ?",
     "answers": ["5 кг", "10 кг", "15 кг", "20 кг", "25 кг"],
     "correctAnswer": [3],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Масса контейнера для телефонных аппаратов (ТА) (не более) ?",
     "answers": ["10 кг", "20 кг", "30 кг", "40 кг", "50 кг"],
     "correctAnswer": [3],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Диапазон температур при хранении и транспортировании в ударопрочных, пыле- и влагозащищенных контейнере и кейсах со степенью защиты IP-67 ?",
@@ -99,7 +99,7 @@
       "-50..+65 ºС"
     ],
     "correctAnswer": [5],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Что не входит в состав МТК-240Б ?",
@@ -111,7 +111,7 @@
       "ЗИП-О"
     ],
     "correctAnswer": [4],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Что не входит в состав контейнера для ТА МТК-240Б ?",
@@ -123,7 +123,7 @@
       "провод заземления 5 м"
     ],
     "correctAnswer": [2],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Предназначение МТК-240Б ?",
@@ -135,7 +135,7 @@
       "Для образования и шифрования/дешифрования канала Е1, а также развертывания засекреченных сетей передачи данных, видеоконференцсвязи и автоматической телефонной связи на стационарном или подвижном пункте управления."
     ],
     "correctAnswer": [2],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Какие волны не соответствуют УКВ диапазону ?",
@@ -147,7 +147,7 @@
       "милиметровые"
     ],
     "correctAnswer": [4],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Чем не характеризуются электромагнитные волны ?",
@@ -159,7 +159,7 @@
       "диапазоном"
     ],
     "correctAnswer": [2],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Что такое канал связи ?",
@@ -170,7 +170,7 @@
       "совокупность устройство и узлов оборудования линейного тракта, обеспечивающих образование линии связи между оконечными станциями"
     ],
     "correctAnswer": [4],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Что не входит в состав любой оконечной радиорелейной станции ?",
@@ -182,7 +182,7 @@
       "антенно-фидерное оборудование"
     ],
     "correctAnswer": [2],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Огибание волнами препятствий это ?",
@@ -194,7 +194,7 @@
       "поляризация"
     ],
     "correctAnswer": [1],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Что такое модуляция ?",
@@ -206,7 +206,7 @@
       "процесс изменения одного или нескольких параметров высокочастотного колебания под воздействием относительно низкочастотного управляющего  сигнала"
     ],
     "correctAnswer": [5],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Какой из электрических параметров является вспомогательным ?",
@@ -218,7 +218,7 @@
       "защищенность от внятных переходных помех между направлениями передачи и приема одного канала ТЧ"
     ],
     "correctAnswer": [1],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Какая из характеристик цифрового потока E1 верная ?",
@@ -230,7 +230,7 @@
       "32 канала, 32 Мбит/с"
     ],
     "correctAnswer": [3],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Что из перечисленного относится к внутренним помехам ?",
@@ -242,7 +242,7 @@
       "помехи от источников питания"
     ],
     "correctAnswer": [3],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Что не входит в состав АТСЭ ФММ ?",
@@ -254,7 +254,7 @@
       "кассета пакетной сигнализации"
     ],
     "correctAnswer": [4],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Пропускная способность цифрового канала АТС ?",
@@ -266,12 +266,12 @@
       "512 кбит/с"
     ],
     "correctAnswer": [2],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   },
   {
     "question": "Максимальная абонентская емкость АТС ФМС ?",
     "answers": ["8", "16", "24", "32", "48"],
     "correctAnswer": [2],
-    "hintText": "asdaddasadsasddadaadda"
+    "hintText": ""
   }
 ]
