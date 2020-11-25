@@ -1,0 +1,13 @@
+.setup-container__type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 200px;
+}
+
+.setup-container__type-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
