@@ -1,128 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>МТК-240Б</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="./lib/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="shortcut icon" href="./images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/setup.css" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- End of Swiper -->
 
     <script src="./lib/jquery.min.js"></script>
     <script src="./lib/bootstrap.min.js"></script>
-</head>
-<body>
-
-<header class="navbar navbar-expand-lg navbar-light header">
-    <div class="container-fluid">
+    <script src="./js/swiper.js"></script>
+  </head>
+  <body class="main-screen">
+    <header class="navbar navbar-expand-lg navbar-light header">
+      <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="./index.html">МТК-240Б</a>
+          <a class="navbar-brand" href="./index.html">МТК-240Б</a>
         </div>
         <div class="nav-item" id="myNavbar">
-            <ul class="nav navbar-nav ">
-                <li class="header-menu-item">
-                    <a href="./index.html">
-                        <button class="btn header-menu-item-button">
-                            Домашняя страница
-                        </button>
-                    </a>
+          <ul class="nav navbar-nav">
+            <li class="header-menu-item">
+              <a href="./index.html">
+                <button class="btn header-menu-item-button">
+                  Домашняя страница
+                </button>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownTheory"
+                data-toggle="dropdown"
+              >
+                Теория
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownTheory">
+                <li class="dropdown-item">
+                  <a href="pages/tth.html"
+                    >Тактико-технические характеристики МТК-240Б</a
+                  >
                 </li>
-                <li class="header-menu-item">
-                    <button class="btn dropdown-toggle header-menu-item-button" id="dropdownTheory"
-                            data-toggle="dropdown">
-                        Теория
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownTheory">
-                        <li class="dropdown-item">
-                            <a href="pages/tth.html">Тактико-технические характеристики МТК-240Б</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="pages/#">Состав комплекса</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="pages/composition.html">Устройство комплекса</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="pages/tb.html">Требования безопасности при подготовке
-                                комплекса к работе</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="pages/usage.html">Варианты применения</a>
-                        </li>
-                    </ul>
+                <li class="dropdown-item">
+                  <a href="pages/composition.html">Состав комплекса</a>
                 </li>
-                <li class="header-menu-item">
-                    <button class="btn dropdown-toggle header-menu-item-button" id="dropdownPractice"
-                            data-toggle="dropdown">
-                        Практика
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
-                        <li class="dropdown-item">
-                            <a href="./images/#">
-                                Порядок настройки и подготовки комплекса к работе
-                            </a>
-                        </li>
-                    </ul>
+                <li class="dropdown-item">
+                  <a href="pages/tb.html"
+                    >Требования безопасности при подготовке комплекса к
+                    работе</a
+                  >
                 </li>
-                <li class="header-menu-item">
-                    <button class="btn dropdown-toggle header-menu-item-button" id="dropdownTestKnowledge"
-                            data-toggle="dropdown">
-                        Контроль знаний
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
-                        <li class="dropdown-item">
-                            <a href="./pages/testTheory.html">
-                                Тест по теории
-                            </a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./images/#" download>
-                                Работа на станции
-                            </a>
-                        </li>
-                    </ul>
+                <li class="dropdown-item">
+                  <a href="pages/usage.html">Варианты применения</a>
                 </li>
-                <li class="header-menu-item">
-                    <a href="pages/gallery.html">
-                        <button class="btn header-menu-item-button">
-                            Галерея
-                        </button>
-                    </a>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownPractice"
+                data-toggle="dropdown"
+              >
+                Практика
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
+                <li class="dropdown-item">
+                  <a href="./pages/complexSetup.html">
+                    Порядок настройки и подготовки комплекса к работе
+                  </a>
                 </li>
-                <li class="header-menu-item">
-                    <a href="pages/about.html">
-                        <button class="btn header-menu-item-button">
-                            О программе
-                        </button>
-                    </a>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownTestKnowledge"
+                data-toggle="dropdown"
+              >
+                Контроль знаний
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
+                <li class="dropdown-item">
+                  <a href="./pages/testTheory.html"> Тест по теории </a>
                 </li>
-            </ul>
+                <li class="dropdown-item">
+                  <a href="./images/#" download> Работа на станции </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <a href="pages/gallery.html">
+                <button class="btn header-menu-item-button">Галерея</button>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <a href="pages/about.html">
+                <button class="btn header-menu-item-button">О программе</button>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="nav-item">
-            <ul class="header-icons-container">
-                <li class="header-icons-container-item">
-                    <a class="emblem" href="https://www.bsuir.by">
-                        <img class="header-icons-container-item-icon" src="./images/emblems/bsuir.png"/>
-                    </a>
-                </li>
-                <li class="header-icons-container-item">
-                    <a class="emblem" href="http://www.mil.by/ru/education/bsuir">
-                        <img class="header-icons-container-item-icon" src="./images/emblems/militaryFaculty.png">
-                    </a>
-                </li>
-            </ul>
+          <ul class="header-icons-container">
+            <li class="header-icons-container-item">
+              <a class="emblem" href="https://www.bsuir.by">
+                <img
+                  class="header-icons-container-item-icon"
+                  src="./images/emblems/bsuir.png"
+                />
+              </a>
+            </li>
+            <li class="header-icons-container-item">
+              <a class="emblem" href="http://www.mil.by/ru/education/bsuir">
+                <img
+                  class="header-icons-container-item-icon"
+                  src="./images/emblems/militaryFaculty.png"
+                />
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </header>
+
+    <div class="container content-container">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img class="swiper-slide__img" src="./images/gallery/1.jpg" />
+            <h2 class="swiper-slide__text">
+              Комплекс телекоммуникационный мобильный МТК-240Б
+            </h2>
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-slide__img" src="./images/gallery/4.jpg" />
+            <h2 class="swiper-slide__text">
+              Станция телефонная АТСЭ ФМС (блок БМК) (19”, 1U)
+            </h2>
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-slide__img" src="./images/gallery/7.jpg" />
+            <h2 class="swiper-slide__text">Панель коммутации</h2>
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-slide__img" src="./images/gallery/13.jpg" />
+            <h2 class="swiper-slide__text">
+              Эксплуатационная документация (в сумке-кармане контейнера)
+            </h2>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
-</header>
 
-<div class="container content-container">
-<!--CONTENT-->
-</div>
-
-<footer class="container-fluid footer-container">
-    <p>© 2020 Artyom Zakharenko, BSUIR</p>
-</footer>
-
-</body>
+    <footer class="container-fluid footer-container">
+      <p>© 2020 Artyom Zakharenko, BSUIR</p>
+    </footer>
+  </body>
 </html>

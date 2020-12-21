@@ -1,257 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>ТТХ МТК-240Б</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="../lib/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="shortcut icon" href="../images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="../images/favicon/favicon.ico"
+      type="image/x-icon"
+    />
 
     <script src="../lib/jquery.min.js"></script>
     <script src="../lib/bootstrap.min.js"></script>
-</head>
-<body>
-
-<header class="navbar navbar-expand-lg navbar-light header">
-    <div class="container-fluid">
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-light header">
+      <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="../index.html">МТК-240Б</a>
+          <a class="navbar-brand" href="../index.html">МТК-240Б</a>
         </div>
         <div class="nav-item" id="myNavbar">
-            <ul class="nav navbar-nav ">
-                <li class="header-menu-item">
-                    <a href="../index.html">
-                        <button class="btn header-menu-item-button">
-                            Домашняя страница
-                        </button>
-                    </a>
+          <ul class="nav navbar-nav">
+            <li class="header-menu-item">
+              <a href="../index.html">
+                <button class="btn header-menu-item-button">
+                  Домашняя страница
+                </button>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownTheory"
+                data-toggle="dropdown"
+              >
+                Теория
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownTheory">
+                <li class="dropdown-item">
+                  <a href="tth.html"
+                    >Тактико-технические характеристики МТК-240Б</a
+                  >
                 </li>
-                <li class="header-menu-item">
-                    <button class="btn dropdown-toggle header-menu-item-button" id="dropdownTheory"
-                            data-toggle="dropdown">
-                        Теория
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownTheory">
-                        <li class="dropdown-item">
-                            <a href="./tth.html">Тактико-технические характеристики МТК-240Б</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./#">Состав комплекса</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./composition.html">Устройство комплекса</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./tb.html">Требования безопасности при подготовке
-                                комплекса к работе</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./usage.html">Варианты применения</a>
-                        </li>
-                    </ul>
+                <li class="dropdown-item">
+                  <a href="./composition.html">Состав комплекса</a>
                 </li>
-                <li class="header-menu-item">
-                    <button class="btn dropdown-toggle header-menu-item-button" id="dropdownPractice"
-                            data-toggle="dropdown">
-                        Практика
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
-                        <li class="dropdown-item">
-                            <a href="../images/#">
-                                Порядок настройки и подготовки комплекса к работе
-                            </a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="../images/#" download>
-                                Работа на станции
-                            </a>
-                        </li>
-                    </ul>
+                <li class="dropdown-item">
+                  <a href="./tb.html"
+                    >Требования безопасности при подготовке комплекса к
+                    работе</a
+                  >
                 </li>
-                <li class="header-menu-item">
-                    <button class="btn dropdown-toggle header-menu-item-button" id="dropdownTestKnowledge"
-                            data-toggle="dropdown">
-                        Контроль знаний
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
-                        <li class="dropdown-item">
-                            <a href="./testTheory.html">
-                                Тест по теории
-                            </a>
-                        </li>
-                    </ul>
+                <li class="dropdown-item">
+                  <a href="usage.html">Варианты применения</a>
                 </li>
-                <li class="header-menu-item">
-                    <a href="./gallery.html">
-                        <button class="btn header-menu-item-button">
-                            Галерея
-                        </button>
-                    </a>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownPractice"
+                data-toggle="dropdown"
+              >
+                Практика
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
+                <li class="dropdown-item">
+                  <a href="./complexSetup.html">
+                    Порядок настройки и подготовки комплекса к работе
+                  </a>
                 </li>
-                <li class="header-menu-item">
-                    <a href="about.html">
-                        <button class="btn header-menu-item-button">
-                            О программе
-                        </button>
-                    </a>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownTestKnowledge"
+                data-toggle="dropdown"
+              >
+                Контроль знаний
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
+                <li class="dropdown-item">
+                  <a href="./testTheory.html"> Тест по теории </a>
                 </li>
-            </ul>
+                <li class="dropdown-item">
+                  <a href="../images/#" download> Работа на станции </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <a href="gallery.html">
+                <button class="btn header-menu-item-button">Галерея</button>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <a href="about.html">
+                <button class="btn header-menu-item-button">О программе</button>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="nav-item">
-            <ul class="header-icons-container">
-                <li class="header-icons-container-item">
-                    <a class="emblem" href="https://www.bsuir.by">
-                        <img class="header-icons-container-item-icon" src="../images/emblems/bsuir.png"/>
-                    </a>
-                </li>
-                <li class="header-icons-container-item">
-                    <a class="emblem" href="http://www.mil.by/ru/education/bsuir">
-                        <img class="header-icons-container-item-icon" src="../images/emblems/militaryFaculty.png">
-                    </a>
-                </li>
-            </ul>
+          <ul class="header-icons-container">
+            <li class="header-icons-container-item">
+              <a class="emblem" href="https://www.bsuir.by">
+                <img
+                  class="header-icons-container-item-icon"
+                  src="../images/emblems/bsuir.png"
+                />
+              </a>
+            </li>
+            <li class="header-icons-container-item">
+              <a class="emblem" href="http://www.mil.by/ru/education/bsuir">
+                <img
+                  class="header-icons-container-item-icon"
+                  src="../images/emblems/militaryFaculty.png"
+                />
+              </a>
+            </li>
+          </ul>
         </div>
-    </div>
-</header>
+      </div>
+    </header>
 
-<div class="container content-container">
-    <h2 id="title" style="text-align: center">Тактико-технические характеристики MTK 240Б</h2>
+    <div class="container content-container">
+      <h2 id="title" style="text-align: center">
+        Тактико-технические характеристики MTK 240Б
+      </h2>
 
-    <h3>МТК 240Б обеспечивает:</h3>
-    <h4 style="font-weight: bold; font-style: italic;">С помощью АТСЭ ФМС:</h4>
-    <ul>
-        <li>автоматическую телефонную внутреннюю связь, исходящую, входящую и транзитную связь с абонентами других АТС сети связи;</li>
-        <li>подключение до 16 аналоговых двухпроводных защищенных телефонных аппаратов;</li>
-        <li>взаимодействие с другими АТС по двум защищенным цифровым потокам Е1 по стандарту G.703 с поддержкой сигнализации типа 1ВСК, 2ВСК и EDSS-1;</li>
-        <li>взаимодействие с другими АТС ФМС по защищенной линии Ethernet 100BASE-TX с трансляцией Ethernet трафика через канальные интервалы потока Е1 (”мост” через встроенный TDM-Ethernet конвертор) с функцией VLAN;</li>
-        <li>функции управления/мониторинга состояния оборудования АТСЭ ФМС, а также функций ручного коммутатора (АРМ);</li>
+      <h3>МТК 240Б обеспечивает:</h3>
+      <h4 style="font-weight: bold; font-style: italic">С помощью АТСЭ ФМС:</h4>
+      <ul>
+        <li>
+          автоматическую телефонную внутреннюю связь, исходящую, входящую и
+          транзитную связь с абонентами других АТС сети связи;
+        </li>
+        <li>
+          подключение до 16 аналоговых двухпроводных защищенных телефонных
+          аппаратов;
+        </li>
+        <li>
+          взаимодействие с другими АТС по двум защищенным цифровым потокам Е1 по
+          стандарту G.703 с поддержкой сигнализации типа 1ВСК, 2ВСК и EDSS-1;
+        </li>
+        <li>
+          взаимодействие с другими АТС ФМС по защищенной линии Ethernet
+          100BASE-TX с трансляцией Ethernet трафика через канальные интервалы
+          потока Е1 (”мост” через встроенный TDM-Ethernet конвертор) с функцией
+          VLAN;
+        </li>
+        <li>
+          функции управления/мониторинга состояния оборудования АТСЭ ФМС, а
+          также функций ручного коммутатора (АРМ);
+        </li>
         <li>ввод исходных данных (коды, нумерация и т.д.) для АТСЭ ФМС;</li>
-        <li>техническую защиту информации от несанкционированного доступа, а также от утечек по каналам побочных электромагнитных излучений и наводок.</li>
-    </ul>
-    
-    <h4 style="font-weight: bold; font-style: italic;">С помощью аппаратуры криптографической защиты информации (засекречивания):</h4>
-    <ul>
-        <li>шифрование цифрового потока Е1 с возможностью выделения трафика Ethernet;</li>
-    </ul>
-    <h6>Примечание: аппаратура шифрования (засекречивания) может предоставляться или устанавливаться в комплекс заказчиком.</h6>
+        <li>
+          техническую защиту информации от несанкционированного доступа, а также
+          от утечек по каналам побочных электромагнитных излучений и наводок.
+        </li>
+      </ul>
 
-    <h4 style="font-weight: bold; font-style: italic;">С помощью аппаратуры цифровых систем передачи (ЦСП):</h4>
-    <ul>
-        <li>подключение к взаимодействующим узлам связи или пунктам выделения каналов, в т.ч. РУЭС сети электросвязи общего пользования и т.д. по медному или волоконно-оптическому кабелю связи;</li>
+      <h4 style="font-weight: bold; font-style: italic">
+        С помощью аппаратуры криптографической защиты информации
+        (засекречивания):
+      </h4>
+      <ul>
+        <li>
+          шифрование цифрового потока Е1 с возможностью выделения трафика
+          Ethernet;
+        </li>
+      </ul>
+      <h6>
+        Примечание: аппаратура шифрования (засекречивания) может предоставляться
+        или устанавливаться в комплекс заказчиком.
+      </h6>
+
+      <h4 style="font-weight: bold; font-style: italic">
+        С помощью аппаратуры цифровых систем передачи (ЦСП):
+      </h4>
+      <ul>
+        <li>
+          подключение к взаимодействующим узлам связи или пунктам выделения
+          каналов, в т.ч. РУЭС сети электросвязи общего пользования и т.д. по
+          медному или волоконно-оптическому кабелю связи;
+        </li>
         <li>выделение цифровых потоков Е-1 и трафика Ethernet.</li>
-    </ul>
-    <h6>Примечание: в случае необходимости МТК-240Б может комплектоваться выносным (ответным) комплектом аппаратуры ЦСП.</h6>
+      </ul>
+      <h6>
+        Примечание: в случае необходимости МТК-240Б может комплектоваться
+        выносным (ответным) комплектом аппаратуры ЦСП.
+      </h6>
 
-    <h4 style="font-weight: bold; font-style: italic;">С помощью оборудования кроссовой коммутации:</h4>
-    <ul>
+      <h4 style="font-weight: bold; font-style: italic">
+        С помощью оборудования кроссовой коммутации:
+      </h4>
+      <ul>
         <li>комплексную защиту по току и напряжению всех линий;</li>
         <li>коммутацию и подключение абонентов и пользователей.</li>
-    </ul>
+      </ul>
 
-    <h4 style="font-weight: bold; font-style: italic;">С помощью встроенной панельной ПЭВМ:</h4>
-    <ul>
-        <li>диагностику, мониторинг и установку режимов работы входящего в состав комплекса оборудования;</li>
+      <h4 style="font-weight: bold; font-style: italic">
+        С помощью встроенной панельной ПЭВМ:
+      </h4>
+      <ul>
+        <li>
+          диагностику, мониторинг и установку режимов работы входящего в состав
+          комплекса оборудования;
+        </li>
         <li>работу АТСЭ ФМС в режиме коммутатора ручного обслуживания.</li>
-    </ul>
+      </ul>
 
-    <h4 style="font-weight: bold">Электропитание:</h4>
-    <table id="powerSupplyTable" class="table">
+      <h4 style="font-weight: bold">Электропитание:</h4>
+      <table id="powerSupplyTable" class="table">
         <thead class="thead-light">
-        <tr>
+          <tr>
             <th>Параметр</th>
             <th>Значение</th>
-        </tr>
+          </tr>
         </thead>
         <tr>
-            <td>Напряжение сети переменного тока</td>
-            <td>220 В</td>
+          <td>Напряжение сети переменного тока</td>
+          <td>220 В</td>
         </tr>
         <tr>
-            <td>Частота переменного тока</td>
-            <td>50 Гц</td>
+          <td>Частота переменного тока</td>
+          <td>50 Гц</td>
         </tr>
         <tr>
-            <td>Напряжение сети постоянного тока</td>
-            <td>48 - 60 В</td>
+          <td>Напряжение сети постоянного тока</td>
+          <td>48 - 60 В</td>
         </tr>
         <tr>
-            <td>Напряжение внешних АКБ (в течение 1 часа)</td>
-            <td>48 В</td>
+          <td>Напряжение внешних АКБ (в течение 1 часа)</td>
+          <td>48 В</td>
         </tr>
         <tr>
-            <td>Предел потребляемой мощности от сети переменного тока</td>
-            <td>500 В</td>
+          <td>Предел потребляемой мощности от сети переменного тока</td>
+          <td>500 В</td>
         </tr>
-    </table>
+      </table>
 
-    <h4 style="font-weight: bold">Масса:</h4>
-    <table id="weigthTable" class="table">
+      <h4 style="font-weight: bold">Масса:</h4>
+      <table id="weigthTable" class="table">
         <thead class="thead-light">
-        <tr>
+          <tr>
             <th>Параметр</th>
             <th>Значение</th>
-        </tr>
+          </tr>
         </thead>
         <tr>
-            <td>Масса полностью укомплектованного контейнера</td>
-            <td>50 кг</td>
+          <td>Масса полностью укомплектованного контейнера</td>
+          <td>50 кг</td>
         </tr>
         <tr>
-            <td>Масса полностью укомплектованного кейса с АКБ</td>
-            <td>15 кг</td>
+          <td>Масса полностью укомплектованного кейса с АКБ</td>
+          <td>15 кг</td>
         </tr>
         <tr>
-            <td>Масса полностью укомплектованного контейнера для телефонных аппаратов</td>
-            <td>30 кг</td>
+          <td>
+            Масса полностью укомплектованного контейнера для телефонных
+            аппаратов
+          </td>
+          <td>30 кг</td>
         </tr>
-    </table>
+      </table>
 
-    <h4 style="font-weight: bold">Габаритные размеры:</h4>
-    <table id="dimensionsTable" class="table">
+      <h4 style="font-weight: bold">Габаритные размеры:</h4>
+      <table id="dimensionsTable" class="table">
         <thead class="thead-light">
-        <tr>
+          <tr>
             <th>Параметр</th>
             <th>Значение</th>
-        </tr>
+          </tr>
         </thead>
         <tr>
-            <td>Контейнер</td>
-            <td>980x630x650 мм</td>
+          <td>Контейнер</td>
+          <td>980x630x650 мм</td>
         </tr>
         <tr>
-            <td>Кейс с АКБ</td>
-            <td>339x295x152 мм</td>
+          <td>Кейс с АКБ</td>
+          <td>339x295x152 мм</td>
         </tr>
         <tr>
-            <td>Контейнер для телефонных аппаратов</td>
-            <td>1044x547x378 мм</td>
+          <td>Контейнер для телефонных аппаратов</td>
+          <td>1044x547x378 мм</td>
         </tr>
-    </table>
+      </table>
 
+      <h2 id="ats-title" style="text-align: center">
+        Тактико-технические характеристики АТСЭ ФММ
+      </h2>
 
-
-    <h2 id="ats-title" style="text-align: center">Тактико-технические характеристики АТСЭ ФММ</h2>
-
-    <h4 style="font-weight: bold; font-style: italic;">Нагрузка:</h4>
-    <ul>
+      <h4 style="font-weight: bold; font-style: italic">Нагрузка:</h4>
+      <ul>
         <li>абонентские линии - 0,15 Эрл;</li>
         <li>соединительные линии - 0,7 Эрл.</li>
-    </ul>
+      </ul>
 
-    <h4 style="font-weight: bold; font-style: italic;">Типы линий, включаемых в АТС:</h4>
-    <ul>
+      <h4 style="font-weight: bold; font-style: italic">
+        Типы линий, включаемых в АТС:
+      </h4>
+      <ul>
         <li>аналоговые двухпроводные линии индивидуальных абонентов (АЛ);</li>
         <li>аналоговые двухпроводные линии спаренных абонентов (САЛ);</li>
         <li>аналоговые двухпроводные линии прямых абонентов;</li>
         <li>аналоговые двухпроводные линии местной и междугородней связи;</li>
         <li>аналоговые четырехпроводные линии с вызывной частотой 2100 Гц;</li>
         <li>цифровая двухпроводная линия системного телефона (ЦАЛ СТА).</li>
-    </ul>
+      </ul>
 
-    <h4 style="font-weight: bold; font-style: italic;">Виды ДВО, предоставляемые абонентам:</h4>
-    <ul>
+      <h4 style="font-weight: bold; font-style: italic">
+        Виды ДВО, предоставляемые абонентам:
+      </h4>
+      <ul>
         <li>тональный набор;</li>
         <li>безусловная переадресация;</li>
         <li>переадресация при занятости;</li>
@@ -265,311 +330,234 @@
         <li>определение номера вызывающего абонента (CLIP);</li>
         <li>уведомление о поступлении нового вызова;</li>
         <li>отмена всех услуг.</li>
-    </ul>
+      </ul>
 
-    <h4 style="font-weight: bold; font-style: italic;">Наращивание емкости:</h4>
-    <ul>
+      <h4 style="font-weight: bold; font-style: italic">
+        Наращивание емкости:
+      </h4>
+      <ul>
         <li>абонентская линия - 8</li>
         <li>цифровая СЛ - ИКМ30 (ИКМ15) - 2</li>
         <li>аналоговая СЛ - 2</li>
-    </ul>
+      </ul>
 
-    <h4 style="font-weight: bold; font-style: italic;">Поддержка нумерации в сети:</h4>
-    <ul>
+      <h4 style="font-weight: bold; font-style: italic">
+        Поддержка нумерации в сети:
+      </h4>
+      <ul>
         <li>открытая;</li>
         <li>закрытая (2 - 7 знаков).</li>
-    </ul>
+      </ul>
 
-    <h4 style="font-weight: bold; font-style: italic;">Прочее:</h4>
-    <ul>
+      <h4 style="font-weight: bold; font-style: italic">Прочее:</h4>
+      <ul>
         <li>Сопротивление шлейфа АЛ - до 3 кОм.</li>
         <li>АОН - безынтервальный пакет.</li>
         <li>Пропускная способность цифрового канала - 64 кбит/с.</li>
         <li>Коды межстанционного обмена (для ИКМ30) - НБВ-3.</li>
-        <li>Тип блокиратора спаренных АЛ  - диодный.</li>
-        <li>Погрешность определения продолжительности соединения не более ± 1 с.</li>
-        <li>Напряжение электропитания с заземленным положительным полюсом - 54 ÷ 72В.</li>
-    </ul>
+        <li>Тип блокиратора спаренных АЛ - диодный.</li>
+        <li>
+          Погрешность определения продолжительности соединения не более ± 1 с.
+        </li>
+        <li>
+          Напряжение электропитания с заземленным положительным полюсом - 54 ÷
+          72В.
+        </li>
+      </ul>
 
+      <h2 id="orion-title" style="text-align: center">
+        Тактико-технические характеристики FlexDSL Орион 3
+      </h2>
 
-
-    <h2 id="orion-title" style="text-align: center">Тактико-технические характеристики FlexDSL Орион 3</h2>
-
-    <h4 style="font-weight: bold">Линейный стык</h4>
-    <table id="linearJointTable" class="table">
+      <h4 style="font-weight: bold">Линейный стык</h4>
+      <table id="linearJointTable" class="table">
         <thead class="thead-light">
-        <tr>
+          <tr>
             <th>Параметр</th>
             <th>Значение</th>
-        </tr>
+          </tr>
         </thead>
         <tr>
-            <td>Число пар передачи</td>
-            <td>1, 2 или 4</td>
+          <td>Число пар передачи</td>
+          <td>1, 2 или 4</td>
         </tr>
         <tr>
-            <td>Скорость передачи</td>
-            <td>200 кбит/с – 15 Мбит/с</td>
+          <td>Скорость передачи</td>
+          <td>200 кбит/с – 15 Мбит/с</td>
         </tr>
         <tr>
-            <td>Допустимое отклонение скорости передачи</td>
-            <td>±50*10^-6</td>
+          <td>Допустимое отклонение скорости передачи</td>
+          <td>±50*10^-6</td>
         </tr>
         <tr>
-            <td>Линейный код</td>
-            <td>TC-PAM16/32/64/128</td>
+          <td>Линейный код</td>
+          <td>TC-PAM16/32/64/128</td>
         </tr>
         <tr>
-            <td>Номинальное нагрузочное сопротивление</td>
-            <td>130 Ом</td>
+          <td>Номинальное нагрузочное сопротивление</td>
+          <td>130 Ом</td>
         </tr>
         <tr>
-            <td>Уровень передачи</td>
-            <td>+14,5 дБм</td>
+          <td>Уровень передачи</td>
+          <td>+14,5 дБм</td>
         </tr>
-    </table>
+      </table>
 
-    <h4 style="font-weight: bold">Сетевой стык Е1 (G.703)</h4>
-    <table id="netJointTable" class="table">
+      <h4 style="font-weight: bold">Сетевой стык Е1 (G.703)</h4>
+      <table id="netJointTable" class="table">
         <thead class="thead-light">
-        <tr>
+          <tr>
             <th>Параметр</th>
             <th>Значение</th>
-        </tr>
+          </tr>
         </thead>
         <tr>
-            <td>Количество</td>
-            <td>1..4</td>
+          <td>Количество</td>
+          <td>1..4</td>
         </tr>
         <tr>
-            <td>Скорость передачи в каждом направлении</td>
-            <td>2048 (1±50*10^-6) кбит/с</td>
+          <td>Скорость передачи в каждом направлении</td>
+          <td>2048 (1±50*10^-6) кбит/с</td>
         </tr>
         <tr>
-            <td>Волновое сопротивление нагрузки</td>
-            <td>120 Ом</td>
+          <td>Волновое сопротивление нагрузки</td>
+          <td>120 Ом</td>
         </tr>
         <tr>
-            <td>Линейный код</td>
-            <td>HDB3</td>
+          <td>Линейный код</td>
+          <td>HDB3</td>
         </tr>
         <tr>
-            <td>Номинальная длительность импульса</td>
-            <td>244 нс</td>
+          <td>Номинальная длительность импульса</td>
+          <td>244 нс</td>
         </tr>
         <tr>
-            <td>Предельно допустимые отклонения тактовой частоты входного сигнала</td>
-            <td>±100 Гц</td>
+          <td>
+            Предельно допустимые отклонения тактовой частоты входного сигнала
+          </td>
+          <td>±100 Гц</td>
         </tr>
         <tr>
-            <td>Мах. дрожание фазы на выходе</td>
-            <td>согласно п.2 рек. G.823</td>
+          <td>Мах. дрожание фазы на выходе</td>
+          <td>согласно п.2 рек. G.823</td>
         </tr>
         <tr>
-            <td>Пределы затухания линии на частоте 1024 кГц</td>
-            <td>0..18 дБ</td>
+          <td>Пределы затухания линии на частоте 1024 кГц</td>
+          <td>0..18 дБ</td>
         </tr>
         <tr>
-            <td>Защита от перенапряжений</td>
-            <td>согласно рек. ITU_T К.41</td>
+          <td>Защита от перенапряжений</td>
+          <td>согласно рек. ITU_T К.41</td>
         </tr>
-    </table>
+      </table>
 
-    <h4 style="font-weight: bold">Дополнительный сетевой стык Ethernet</h4>
-    <table id="extraEJointTable" class="table">
+      <h4 style="font-weight: bold">Дополнительный сетевой стык Ethernet</h4>
+      <table id="extraEJointTable" class="table">
         <thead class="thead-light">
-        <tr>
+          <tr>
             <th>Параметр</th>
             <th>Значение</th>
-        </tr>
+          </tr>
         </thead>
         <tr>
-            <td>Стандарт</td>
-            <td>IEEE 802.3</td>
+          <td>Стандарт</td>
+          <td>IEEE 802.3</td>
         </tr>
         <tr>
-            <td>Количество</td>
-            <td>1..4</td>
+          <td>Количество</td>
+          <td>1..4</td>
         </tr>
         <tr>
-            <td>Линейный код</td>
-            <td>манчестер или 4В/5В</td>
+          <td>Линейный код</td>
+          <td>манчестер или 4В/5В</td>
         </tr>
         <tr>
-            <td>Тип</td>
-            <td>10/100BaseTX(Layer 2 switch)</td>
+          <td>Тип</td>
+          <td>10/100BaseTX(Layer 2 switch)</td>
         </tr>
         <tr>
-            <td>Скорость передачи</td>
-            <td>10 или 100 Мбит/с</td>
+          <td>Скорость передачи</td>
+          <td>10 или 100 Мбит/с</td>
         </tr>
         <tr>
-            <td>Среда передачи/Макс. длина сегмента</td>
-            <td>2 экранированные пары категории 5 / 100 м</td>
+          <td>Среда передачи/Макс. длина сегмента</td>
+          <td>2 экранированные пары категории 5 / 100 м</td>
         </tr>
-    </table>
+      </table>
 
-    <h4 style="font-weight: bold">Стык управления (Monitor Interface)</h4>
-    <table id="monitorJointTable" class="table">
+      <h4 style="font-weight: bold">Стык управления (Monitor Interface)</h4>
+      <table id="monitorJointTable" class="table">
         <thead class="thead-light">
-        <tr>
+          <tr>
             <th>Параметр</th>
             <th>Значение</th>
-        </tr>
+          </tr>
         </thead>
         <tr>
-            <td>Мониторинг</td>
-            <td>VT100, Telnet, HTTP, SNMP</td>
+          <td>Мониторинг</td>
+          <td>VT100, Telnet, HTTP, SNMP</td>
         </tr>
         <tr>
-            <td>Передача данных канала управления</td>
-            <td>Через интерейс Ethernet</td>
+          <td>Передача данных канала управления</td>
+          <td>Через интерейс Ethernet</td>
         </tr>
-    </table>
+      </table>
 
-    <h4 style="font-weight: bold">Электропитание оконечных устройств</h4>
-    <table id="terminalPowerSupplyTable" class="table">
+      <h4 style="font-weight: bold">Электропитание оконечных устройств</h4>
+      <table id="terminalPowerSupplyTable" class="table">
         <thead class="thead-light">
-        <tr>
+          <tr>
             <th>Параметр</th>
             <th>Значение</th>
-        </tr>
+          </tr>
         </thead>
         <tr>
-            <td>Напряжение питания</td>
-            <td>DC: -48/-60В (диапазон от -38 В до -72 В), АС: 90-260 В</td>
+          <td>Напряжение питания</td>
+          <td>DC: -48/-60В (диапазон от -38 В до -72 В), АС: 90-260 В</td>
         </tr>
         <tr>
-            <td>Напряжение дистанционного питания</td>
-            <td>120/200/230/350 В</td>
+          <td>Напряжение дистанционного питания</td>
+          <td>120/200/230/350 В</td>
         </tr>
         <tr>
-            <td>Потребляемая мощность</td>
-            <td>6 Вт без ДП / 94 Вт с ДП</td>
+          <td>Потребляемая мощность</td>
+          <td>6 Вт без ДП / 94 Вт с ДП</td>
         </tr>
-    </table>
+      </table>
 
-    <h4 style="font-weight: bold">Габаритные размеры:</h4>
-    <table id="OrionDimensionsTable" class="table">
+      <h4 style="font-weight: bold">Габаритные размеры:</h4>
+      <table id="OrionDimensionsTable" class="table">
         <thead class="thead-light">
-        <tr>
+          <tr>
             <th>Параметр</th>
             <th>Значение</th>
-        </tr>
+          </tr>
         </thead>
         <tr>
-            <td>Корпус Stand Alone (вариант 1)</td>
-            <td>46x218x165 мм</td>
+          <td>Корпус Stand Alone (вариант 1)</td>
+          <td>46x218x165 мм</td>
         </tr>
         <tr>
-            <td>Корпус Stand Alone (вариант 2)</td>
-            <td>51x262x240 мм</td>
+          <td>Корпус Stand Alone (вариант 2)</td>
+          <td>51x262x240 мм</td>
         </tr>
         <tr>
-            <td>Корпус MiniRack</td>
-            <td>483x230x43,5 мм</td>
+          <td>Корпус MiniRack</td>
+          <td>483x230x43,5 мм</td>
         </tr>
         <tr>
-            <td>Плата SubRack</td>
-            <td>233x220x30 мм</td>
+          <td>Плата SubRack</td>
+          <td>233x220x30 мм</td>
         </tr>
         <tr>
-            <td>Регенератор FG-PAM-RGx-Eth-IP</td>
-            <td>70x290x167 мм</td>
+          <td>Регенератор FG-PAM-RGx-Eth-IP</td>
+          <td>70x290x167 мм</td>
         </tr>
         <tr>
-            <td>Регенератор в корпусе MGS-4-CASE-ST</td>
-            <td>306x193x268мм</td>
+          <td>Регенератор в корпусе MGS-4-CASE-ST</td>
+          <td>306x193x268мм</td>
         </tr>
-    </table>
-
-    <h4 style="font-weight: bold">Дальность работы на различных типах кабелей</h4>
-    <table id="distanceCableTypeTable" class="table">
-        <thead class="thead-light">
-        <tr>
-            <th></th>
-            <th>ТПП 0,4</th>
-            <th>ТПП 0,5</th>
-            <th>ТЦП 0,64</th>
-            <th>КСПП 0,9</th>
-            <th>КСПП 1,2</th>
-            <th>ЗКП 1,2</th>
-            <th>МКСБ 1,2</th>
-        </tr>
-        </thead>
-        <tr>
-            <td>1024 кбит/с</td>
-            <td>6</td>
-            <td>7</td>
-            <td>11,5</td>
-            <td>16</td>
-            <td>17</td>
-            <td>25</td>
-            <td>28</td>
-        </tr>
-        <tr>
-            <td>2048 кбит/с</td>
-            <td>4,5</td>
-            <td>6,5</td>
-            <td>8,5</td>
-            <td>11</td>
-            <td>12</td>
-            <td>17</td>
-            <td>19</td>
-        </tr>
-        <tr>
-            <td>4096 кбит/с</td>
-            <td>2,7</td>
-            <td>4</td>
-            <td>5,5</td>
-            <td>7</td>
-            <td>8</td>
-            <td>10</td>
-            <td>12</td>
-        </tr>
-        <tr>
-            <td>5704 кбит/с</td>
-            <td>2,2</td>
-            <td>3</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>8192 кбит/с</td>
-            <td>1,8</td>
-            <td>2,4</td>
-            <td>3,2</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>8</td>
-        </tr>
-        <tr>
-            <td>11,4 Мбит/с</td>
-            <td>1,2</td>
-            <td>1,6</td>
-            <td>2,1</td>
-            <td>2,7</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>15,2 Мбит/с</td>
-            <td>1</td>
-            <td>1,2</td>
-            <td>1,6</td>
-            <td>2,3</td>
-            <td>2,5</td>
-            <td>2,8</td>
-            <td>3</td>
-        </tr>
-    </table>
-
-</div>
-
-</body>
+      </table>
+    </div>
+  </body>
 </html>

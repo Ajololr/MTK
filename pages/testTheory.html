@@ -1,194 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Тест по теории</title>
 
-    <link rel="stylesheet" href="../lib/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/test.css">
-    <link rel="shortcut icon" href="../images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/test.css" />
+    <link
+      rel="shortcut icon"
+      href="../images/favicon/favicon.ico"
+      type="image/x-icon"
+    />
 
     <script src="../lib/jquery.min.js"></script>
     <script src="../lib/bootstrap.min.js"></script>
     <script src="../sources/questions.json"></script>
     <script src="../js/testTheory.js"></script>
-</head>
-<body>
-<header class="navbar navbar-expand-lg navbar-light header">
-    <div class="container-fluid">
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-light header">
+      <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="../index.html">МТК-240Б</a>
+          <a class="navbar-brand" href="../index.html">МТК-240Б</a>
         </div>
         <div class="nav-item" id="myNavbar">
-            <ul class="nav navbar-nav header-menu">
-                <li class="header-menu-item">
-                    <a href="../index.html">
-                        <button class="btn header-menu-item-button">
-                            Домашняя страница
-                        </button>
-                    </a>
+          <ul class="nav navbar-nav">
+            <li class="header-menu-item">
+              <a href="../index.html">
+                <button class="btn header-menu-item-button">
+                  Домашняя страница
+                </button>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownTheory"
+                data-toggle="dropdown"
+              >
+                Теория
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownTheory">
+                <li class="dropdown-item">
+                  <a href="tth.html"
+                    >Тактико-технические характеристики МТК-240Б</a
+                  >
                 </li>
-                <li class="header-menu-item">
-                    <button class="btn dropdown-toggle header-menu-item-button" id="dropdownTheory"
-                            data-toggle="dropdown">
-                        Теория
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownTheory">
-                        <li class="dropdown-item">
-                            <a href="./tth.html">Тактико-технические характеристики ЦРРС Р-429</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./#">Состав станции</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./composition.html">Устройство станции</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./tb.html">Требования безопастности при подготовке
-                                станции к работе</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="./usage.html">Варианты применения</a>
-                        </li>
-                    </ul>
+                <li class="dropdown-item">
+                  <a href="./composition.html">Состав комплекса</a>
                 </li>
-                <li class="header-menu-item">
-                    <button class="btn dropdown-toggle header-menu-item-button" id="dropdownPractice"
-                            data-toggle="dropdown">
-                        Практика
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
-                        <li>
-                            <a href="./images/download/Poryadok_raboty_na_stantsii.pdf">
-                                Порядок настройки и подготовки станции к работе
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./images/download/StationR429.exe" download>
-                                Работа на станции с ПСО МАСТЕР
-                            </a>
-                        </li>
-                    </ul>
+                <li class="dropdown-item">
+                  <a href="./tb.html"
+                    >Требования безопасности при подготовке комплекса к
+                    работе</a
+                  >
                 </li>
-                <li class="header-menu-item">
-                    <button class="btn dropdown-toggle header-menu-item-button" id="dropdownTestKnowledge"
-                            data-toggle="dropdown">
-                        Контроль знаний
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownTestKnowledge">
-                        <li class="dropdown-item">
-                            <a href="./testTheory.html">
-                                Тест по теории
-                            </a>
-                        </li>
-                    </ul>
+                <li class="dropdown-item">
+                  <a href="usage.html">Варианты применения</a>
                 </li>
-                <li class="header-menu-item">
-                    <a href="./gallery.html">
-                        <button class="btn header-menu-item-button">
-                            Галерея
-                        </button>
-                    </a>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownPractice"
+                data-toggle="dropdown"
+              >
+                Практика
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
+                <li class="dropdown-item">
+                  <a href="./complexSetup.html">
+                    Порядок настройки и подготовки комплекса к работе
+                  </a>
                 </li>
-                <li class="header-menu-item">
-                    <a href="about.html">
-                        <button class="btn header-menu-item-button">
-                            О программе
-                        </button>
-                    </a>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownTestKnowledge"
+                data-toggle="dropdown"
+              >
+                Контроль знаний
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
+                <li class="dropdown-item">
+                  <a href="./testTheory.html"> Тест по теории </a>
                 </li>
-            </ul>
+                <li class="dropdown-item">
+                  <a href="../images/#" download> Работа на станции </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <a href="gallery.html">
+                <button class="btn header-menu-item-button">Галерея</button>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <a href="about.html">
+                <button class="btn header-menu-item-button">О программе</button>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="nav-item">
-            <ul class="header-icons-container">
-                <li class="header-icons-container-item">
-                    <a class="emblem" href="https://www.bsuir.by">
-                        <img class="header-icons-container-item-icon" src="../images/emblems/bsuir.png"/>
-                    </a>
-                </li>
-                <li class="header-icons-container-item">
-                    <a class="emblem" href="http://www.mil.by/ru/education/bsuir">
-                        <img class="header-icons-container-item-icon" src="../images/emblems/militaryFaculty.png">
-                    </a>
-                </li>
-            </ul>
+          <ul class="header-icons-container">
+            <li class="header-icons-container-item">
+              <a class="emblem" href="https://www.bsuir.by">
+                <img
+                  class="header-icons-container-item-icon"
+                  src="../images/emblems/bsuir.png"
+                />
+              </a>
+            </li>
+            <li class="header-icons-container-item">
+              <a class="emblem" href="http://www.mil.by/ru/education/bsuir">
+                <img
+                  class="header-icons-container-item-icon"
+                  src="../images/emblems/militaryFaculty.png"
+                />
+              </a>
+            </li>
+          </ul>
         </div>
-    </div>
-</header>
+      </div>
+    </header>
 
-<div class="container content-container">
-    <div class="test-container" id="mainBlock">
+    <div class="container content-container">
+      <div class="test-container" id="mainBlock">
         <div class="test-container__type" id="testType">
-            <h3>Выберите тип теста</h3>
-            <div class="test-container__type-buttons">
-                <button class="btn" type="button" onclick="chooseTest(true)">Тест с подсказками</button>
-                <button class="btn" type="button" onclick="chooseTest(false)">Контрольный тест</button>
-            </div>
+          <h3>Выберите тип теста</h3>
+          <div class="test-container__type-buttons">
+            <button class="btn" type="button" onclick="chooseTest(true)">
+              Тест с подсказками
+            </button>
+            <button class="btn" type="button" onclick="chooseTest(false)">
+              Контрольный тест
+            </button>
+          </div>
         </div>
         <div class="test-container__user-form" id="userForm">
-            <div class="test-container__user-form-credentials">
-                <label for="userSurname">Фамилия*</label>
-                <input type="text" id="userSurname"/>
-                <label for="userName">Имя*</label>
-                <input type="text" id="userName"/>
-                <label for="userGroup">Группа*</label>
-                <input type="text" id="userGroup"/>
-            </div>
-            <div class="test-container__user-form-submit">
-                <button class="btn" type="submit" onclick="startTest()">Начать тест</button>
-            </div>
+          <div class="test-container__user-form-credentials">
+            <label for="userSurname">Фамилия*</label>
+            <input type="text" id="userSurname" />
+            <label for="userName">Имя*</label>
+            <input type="text" id="userName" />
+            <label for="userGroup">Группа*</label>
+            <input type="text" id="userGroup" />
+          </div>
+          <div class="test-container__user-form-submit">
+            <button class="btn" type="submit" onclick="startTest()">
+              Начать тест
+            </button>
+          </div>
         </div>
         <div class="test-container__question-container" id="testBlock">
-            <div class="test-container__question-container_header">
-                <div class="test-container__question-container_header-title">
-                    <h3 class="test-container__question-container_header-title_value" id="questionNumber"></h3>
-                    <p>Дан ответ на:
-                        <span class="test-container__question-container_header-title_counter"
-                              id="answeredCounter">0/20</span>
-                    </p>
-                </div>
-                <p class="test-container__question-container_header-description" id="questionDescription"></p>
+          <div class="test-container__question-container_header">
+            <div class="test-container__question-container_header-title">
+              <h3
+                class="test-container__question-container_header-title_value"
+                id="questionNumber"
+              ></h3>
+              <p>
+                Дан ответ на:
+                <span
+                  class="test-container__question-container_header-title_counter"
+                  id="answeredCounter"
+                  >0/10</span
+                >
+              </p>
             </div>
-            <div class="test-container__question-container_answers">
-                <ul class="test-container__question-container_answers-list" id="questionAnswers"></ul>
-            </div>
+            <p
+              class="test-container__question-container_header-description"
+              id="questionDescription"
+            ></p>
+          </div>
+          <div class="test-container__question-container_answers">
+            <ul
+              class="test-container__question-container_answers-list"
+              id="questionAnswers"
+            ></ul>
+          </div>
         </div>
         <div class="test-container__hint" id="hintBlock">
-            <span class="test-container__hint-close" onclick="hideHint()"></span>
-            <p class="test-container__hint-value" id="hintText"></p>
+          <span class="test-container__hint-close" onclick="hideHint()"></span>
+          <p class="test-container__hint-value" id="hintText"></p>
         </div>
         <div class="test-container__buttons" id="buttonsBlock">
-            <button class="btn" id="previousBtn">< Предыдущий вопрос</button>
-            <button class="btn" id="checkBtn" onclick="checkAnswer()">Проверить ответ</button>
-            <button class="btn" id="hintBtn" onclick="showHint()">Подсказка</button>
-            <button class="btn" id="nextBtn">Следующий вопрос ></button>
+          <button class="btn" id="previousBtn">Предыдущий вопрос</button>
+          <button class="btn" id="checkBtn" onclick="checkAnswer()">
+            Проверить ответ
+          </button>
+          <button class="btn" id="hintBtn" onclick="showHint()">
+            Подсказка
+          </button>
+          <button class="btn" id="nextBtn">Следующий вопрос ></button>
         </div>
         <div class="test-container__result" id="resultBlock">
-            <div class="test-container__result_user-info">
-                <p class="test-container__result_user-info_item">
-                    ФИО: <span id="resultName"></span>
-                </p>
-                <p class="test-container__result_user-info_item">
-                    Группа: <span id="resultGroup"></span>
-                </p>
-                <p class="test-container__result_user-info_item">
-                    Оценка: <span id="resultMark"></span>
-                </p>
-            </div>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Номер вопроса</th>
-                    <th>Статус</th>
-                    <th>Баллы</th>
-                </tr>
-                </thead>
-                <tbody id="resultTableBody"></tbody>
-            </table>
+          <div class="test-container__result_user-info">
+            <p class="test-container__result_user-info_item">
+              ФИО: <span id="resultName"></span>
+            </p>
+            <p class="test-container__result_user-info_item">
+              Группа: <span id="resultGroup"></span>
+            </p>
+            <p class="test-container__result_user-info_item">
+              Оценка: <span id="resultMark"></span>
+            </p>
+          </div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Номер вопроса</th>
+                <th>Статус</th>
+                <th>Баллы</th>
+              </tr>
+            </thead>
+            <tbody id="resultTableBody"></tbody>
+          </table>
         </div>
+      </div>
     </div>
-</div>
-
-</body>
+  </body>
 </html>

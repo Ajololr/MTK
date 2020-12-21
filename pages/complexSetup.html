@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>МТК-240Б</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>Практика</title>
 
     <link rel="stylesheet" href="../lib/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/gallery.css" />
-    <link rel="stylesheet" href="../css/loop.css" />
+    <link rel="stylesheet" href="../css/setup.css" />
     <link
       rel="shortcut icon"
       href="../images/favicon/favicon.ico"
@@ -17,8 +15,7 @@
 
     <script src="../lib/jquery.min.js"></script>
     <script src="../lib/bootstrap.min.js"></script>
-    <script src="../js/loop.js"></script>
-    <script src="../js/modalWindows.js"></script>
+    <script src="../sources/questions.json"></script>
   </head>
   <body>
     <header class="navbar navbar-expand-lg navbar-light header">
@@ -132,131 +129,14 @@
     </header>
 
     <div class="container content-container">
-      <div class="gallery-title">
-        <h3>Галерея</h3>
-      </div>
-      <div class="gallery-container">
-        <ul class="gallery-container__content">
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/1.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/2.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/3.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/4.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/5.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/6.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/7.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/8.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/9.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/10.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/11.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/12.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/13.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/14.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/15.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/16.jpg"
-            />
-          </li>
-          <li class="gallery-container__content-item">
-            <img
-              data-toggle="magnify"
-              class="gallery-container__content-item_image"
-              src="../images/gallery/17.jpg"
-            />
-          </li>
-        </ul>
+      <div class="setup-container">
+        <div class="setup-container__type">
+          <h3>Выберите вариант работы</h3>
+          <div class="setup-container__type-buttons">
+            <button class="btn" type="button">Работа на АТС</button>
+            <button class="btn" type="button">Работа на Orion</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
