@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Состав МТК-240Б</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="../lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/usage.css" />
+    <link
+      rel="shortcut icon"
+      href="../images/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <script src="../lib/jquery.min.js"></script>
+    <script src="../lib/bootstrap.min.js"></script>
+    <style>
+      img {
+        width: 40px;
+      }
+      .window {
+        margin: 20px auto;
+        width: 70%;
+      }
+      p,
+      li {
+        font-size: 14pt;
+      }
+      p {
+        text-indent: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-light header">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="../index.html">МТК-240Б</a>
+        </div>
+        <div class="nav-item" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="header-menu-item">
+              <a href="../index.html">
+                <button class="btn header-menu-item-button">
+                  Домашняя страница
+                </button>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownTheory"
+                data-toggle="dropdown"
+              >
+                Теория
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownTheory">
+                <li class="dropdown-item">
+                  <a href="tth.html"
+                    >Тактико-технические характеристики МТК-240Б</a
+                  >
+                </li>
+                <li class="dropdown-item">
+                  <a href="./composition.html">Состав комплекса</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="./tb.html"
+                    >Требования безопасности при подготовке комплекса к
+                    работе</a
+                  >
+                </li>
+                <li class="dropdown-item">
+                  <a href="usage.html">Варианты применения</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="settings-order.html"
+                    >Изучить порядок настройки комплекса</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownPractice"
+                data-toggle="dropdown"
+              >
+                Практика
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
+                <li class="dropdown-item">
+                  <a href="./complexSetup.html">
+                    Порядок настройки и подготовки комплекса к работе
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <button
+                class="btn dropdown-toggle header-menu-item-button"
+                id="dropdownTestKnowledge"
+                data-toggle="dropdown"
+              >
+                Контроль знаний
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownPractice">
+                <li class="dropdown-item">
+                  <a href="./testTheory.html"> Тест по теории </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-menu-item">
+              <a href="gallery.html">
+                <button class="btn header-menu-item-button">Галерея</button>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <a href="about.html">
+                <button class="btn header-menu-item-button">О программе</button>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <ul class="header-icons-container">
+            <li class="header-icons-container-item">
+              <a class="emblem" href="https://www.bsuir.by">
+                <img
+                  class="header-icons-container-item-icon"
+                  src="../images/emblems/bsuir.png"
+                />
+              </a>
+            </li>
+            <li class="header-icons-container-item">
+              <a class="emblem" href="http://www.mil.by/ru/education/bsuir">
+                <img
+                  class="header-icons-container-item-icon"
+                  src="../images/emblems/militaryFaculty.png"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="container content-container">
+      <h2 id="title">АТС ЭФМ</h2>
+      <br />
+      <h3>Авторизация</h3>
+      <br />
+      <p>Логин admin пароль padmin Провести чтение данных из АТС.</p>
+      <h3>
+        Зайти в меню «Маршрутизация» - «Генерация» - «Панель управления
+        генерацией».
+      </h3>
+      <p>
+        Перед началом работы с окнами подменю Генерация необходимо
+        предварительно сохранить существующую конфигурацию АТС на диск ПЭВМ
+        пульта оператора.
+      </p>
+      <br />
+      <img src="../images/settings-order/1.png" class="img-fluid window" />
+      <p style="margin-top: 40px">
+        Рекомендуется сохранять конфигурацию всей станции нажав клавишу
+        Сохранить. В процессе сохранения данных в нижнем поле окна будет выведен
+        отчет. После успешного завершения работы следует нажать кнопку Закрыть.
+        После чего станет доступно окно Панель управления генерацией.
+        <br />
+        Порядок работы в меню Генерация для всех режимов, описанных ниже,
+        следующий:
+      </p>
+      <ol>
+        <li>Прочитать данные из АТС;</li>
+        <li>
+          Произвести необходимые изменения с нумерацией, абонентами, пучками и
+          т.д.;
+        </li>
+        <li>Сгенерировать файлы с измененными данными для загрузки;</li>
+        <li>Загрузить данные в АТС;</li>
+      </ol>
+      <h4>Чтение данных из АТС</h4>
+      <p>
+        Прочитать данные из АТС можно нажав кнопку «<img
+          src="../images/settings-order/icons/icon-1.png"
+        />» (загрузка из АТС) в горизонтальном ряду панели инструментов окна
+        Панель управления генерацией, либо в подменю Операции выбрать режим
+        Загрузить из АТС;
+      </p>
+      <img src="../images/settings-order/2.png" class="img-fluid window" />
+
+      <p>
+        Процесс загрузки данных отображается в окне Чтение данных из АТС.
+        <br />
+        После загрузки данных отобразится окно Лог событий, в котором дается
+        информация о результатах загрузки. Информацию, выведенную в окне, можно
+        сохранить в текстовый файл с помощью кнопки (сохранить).
+      </p>
+      <img src="../images/settings-order/3.png" class="img-fluid window" />
+      <p>
+        После закрытия окна Лог событий происходит загрузка баз данных, которую
+        можно проследить в информационном окне Загрузка БД.
+        <br />
+        После выхода из данного в окне Панель управления генерацией будут
+        активированы все инструменты управления.
+      </p>
+      <img src="../images/settings-order/4.png" class="img-fluid window" />
+      <p>
+        В панели управления генерацией зайти в меню «Маршрутизация» - «Пучки» и
+        выбрать соответствующее направление. Открыть окно «Характеристика
+        пучка», настроить сигнализацию соединения. Нажать кнопку «Принять» и
+        загрузить данные в АТС.
+        <br />
+        Для этого необходимо выбрать закладку Пучки, входящие в направление и
+        нажать кнопку «<img src="../images/settings-order/icons/icon-2.png" />».
+        <br />
+        В результате, выбрав пучок КОМПАЗИТ, мы можем убедится, что ему
+        приписаны каналы.
+      </p>
+      <img src="../images/settings-order/5.png" class="img-fluid window" />
+      <p>
+        Двойное нажатие на пучке вызывает окно Характеристика пучка, в котором
+        соответственно необходимо задать характеристики пучка.
+        <br />
+        В предлагаемых списках выбираем необходимые параметры.
+        <br />
+        В зависимости от выбранного типа пучка заполняются параметры в закладках
+        Характеристики входящего пучка или Характеристика исходящего пучка.
+      </p>
+      <img src="../images/settings-order/6.png" class="img-fluid window" />
+      <img src="../images/settings-order/7.png" class="img-fluid window" />
+      <img src="../images/settings-order/8.png" class="img-fluid window" />
+      <img src="../images/settings-order/9.png" class="img-fluid window" />
+      <p>
+        Сохранить данные кнопкой(<img
+          src="../images/settings-order/icons/icon-3.png"
+        />). Выйти из окна, нажав кнопку(<img
+          src="../images/settings-order/icons/icon-4.png"
+        />).
+      </p>
+      <h4>Запись данных в АТС</h4>
+      <p>
+        Запись вновь созданных данных можно производить несколькими способами.
+        <br />
+        При полном завершении процесса внесения изменений в конфигурацию АТС
+        необходимо загрузить данные в станцию путем нажатия кнопки (<img
+          src="../images/settings-order/icons/icon-1.png"
+        />) на горизонтальном ряду панели инструментов основного окна Панель
+        управления генерацией. Только после этого обновленная версия ПО вступит
+        в силу, а данные в самой АТС будут соответствовать данным, отображаемым
+        в пульте оператора.
+        <br />
+        Аналогичная кнопка «<img
+          src="../images/settings-order/icons/icon-5.png"
+        />» присутствует в каждом окне, предназначенном для конфигурирования,
+        что позволяет загружать данные в АТС не по окончании работ, а поэтапно,
+        по мере внесения корректив в ПО.
+        <br />
+        Если по каким-либо причинам вы не хотите загружать новые данные в
+        станцию, то необходимо восстановить отображение прежней конфигурации АТС
+        на пульте оператора. Для этого нажмите кнопку «<img
+          src="../images/settings-order/icons/icon-1.png"
+        />» (загрузить данные из станции).
+      </p>
+      <img src="../images/settings-order/10.png" class="img-fluid window" />
+    </div>
+  </body>
+</html>
